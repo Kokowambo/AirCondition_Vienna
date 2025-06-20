@@ -3,6 +3,14 @@
 ## Title  
 **Air Conditioning in Cafés – Vienna 1st District (2025)**
 
+Title: Air Conditioning in Cafés – Vienna 1st District
+Author: Stephan Luis Konrad (Group 9)
+Description: Manually verified dataset and visualization of air-conditioned cafés in Vienna’s city center, based on OpenStreetMap data.
+Source: OpenStreetMap
+Date: 2025-06
+Project Website: https://kokowambo.github.io/AirCondition_Vienna/
+
+
 ## Description  
 This dataset documents cafés in Vienna’s 1st district and includes manually collected information about the presence or absence of air conditioning. It addresses a significant data gap in OpenStreetMap and aims to support heat-resilience strategies, especially for vulnerable populations seeking cool public indoor places.
 
