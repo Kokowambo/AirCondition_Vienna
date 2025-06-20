@@ -48,17 +48,17 @@
 <h1>Café Dataset Update – Vienna’s 1st District</h1>
 
 <p>
-On hot summer days, many people – especially older adults and vulnerable groups – seek out air-conditioned cafés to cool down and rest. In Vienna’s city center, however, it’s often unclear which cafés even offer air conditioning. While <strong>OpenStreetMap (OSM)</strong> provides an <code>air_conditioning</code> tag, it is rarely used in practice.
+On hot summer days, many people seek out air-conditioned cafés to cool down and rest – especially older adults and vulnerable groups. However, in densely built urban areas like Vienna's 1st district, there's little reliable data showing which cafés even offer air conditioning. Although <strong>OpenStreetMap (OSM)</strong> includes an <code>air_conditioning</code> tag, it is rarely used in practice.
 </p>
 
 <p>
-To better understand the availability of AC in the 1st district, we analyzed a dataset of 139 cafés and found that only <strong>6 entries included air conditioning information</strong>. In addition, many cafés lacked data on other basic attributes like opening hours, street names, and websites, limiting the dataset’s utility.
+To address this gap, we analyzed 139 cafés in the 1st district and discovered that only <strong>6 entries contained AC information</strong>. The dataset also had significant gaps in other key attributes like opening hours, addresses, and websites.
 </p>
 
 <h2>Original Dataset ("Before")</h2>
 
 <p>
-The following map shows the original state of the dataset. Only 4 cafés were marked as having air conditioning and 2 as not having it, while 133 entries provided no information. This incomplete picture highlights the limitations of relying on current OSM data for public use or urban planning.
+The map below shows the initial state of the dataset, with most cafés lacking information on AC availability. Only 4 cafés were marked as having AC, and 2 without – while the remaining 133 had no data. This lack of information limits the usefulness of the dataset for both citizens and urban planners.
 </p>
 
 <iframe src="cafes_map_before.html"></iframe>
@@ -66,43 +66,51 @@ The following map shows the original state of the dataset. Only 4 cafés were ma
 <h2>Cleaning and Completion</h2>
 
 <p>
-We manually reviewed each café by checking official websites and online sources. Entries with outdated or incorrect information were removed. After cleaning, we arrived at a refined dataset of <strong>120 valid cafés</strong>. Of these, <strong>69 were confirmed to have air conditioning</strong>, <strong>43 did not</strong>, and <strong>8 still lacked reliable information</strong>.
+We manually reviewed and updated the data by searching online, checking websites, and validating locations. Cafés with outdated or unclear data were excluded. As a result, we compiled a <strong>cleaned dataset of 120 cafés</strong>, with:
+<ul>
+  <li><strong>69 cafés</strong> confirmed to have air conditioning (~58%)</li>
+  <li><strong>43 cafés</strong> without AC (~36%)</li>
+  <li><strong>8 cafés</strong> still lacking clear info (~7%)</li>
+</ul>
 </p>
 
 <h2>Updated Dataset ("After")</h2>
 
 <p>
-The updated map presents a more accurate view of the distribution of air-conditioned cafés across the district. This improved dataset can support heat adaptation strategies, inform spatial planning decisions, or simply help residents and visitors find a cool place to take a break.
+The updated map below provides a much more reliable and complete picture. It highlights the distribution of air-conditioned cafés across the city center and offers a useful basis for climate adaptation strategies, heat mitigation planning, or simply finding a cool place to relax in summer.
 </p>
 
 <iframe src="cafes_air_conditioning_map.html"></iframe>
 
-<h2>Limitations</h2>
+<h2>Heatmap of Air-Conditioned Cafés</h2>
 
 <p>
-During data cleaning, we excluded 19 cafés that were permanently closed or duplicated. This left us with 120 cafés for analysis. Despite extensive online research, we were unable to update 12 values – including 3 missing websites, 1 opening hour, and 8 unresolved air conditioning attributes.
+To visualize the spatial concentration of cafés with air conditioning, we created a heatmap using only cafés where <code>air_conditioning = yes</code>. This helps identify zones with dense offerings of cool indoor locations, which are especially important during heatwaves. 
+The highest concentrations are found near Stephansplatz and Kärntner Straße, with additional spots near the Ringstraße and University area. 
+This map can help urban planners and vulnerable groups alike in locating clusters of heat-resilient spaces.
+</p>
+
+<iframe src="heatmap_cafes_ac.html"></iframe>
+
+<h2>DBSCAN Clustering of Air-Conditioned Cafés</h2>
+
+<p>
+The following map presents the results of a DBSCAN clustering analysis applied to cafés with confirmed air conditioning in Vienna's 1st district. For this purpose, only points with <code>air_conditioning = yes</code> were used. Coordinates were transformed into a projected system (EPSG:32633) to enable accurate distance-based clustering.
 </p>
 
 <p>
-On the positive side, we successfully adjusted <strong>287 values</strong> across all columns. This includes 131 updated air conditioning entries, 35 new or corrected opening hours, 44 revised street names, 71 updated websites, and 6 corrected café names.
-</p>
-
-<h2>Use Case</h2>
-
-<p>
-This dataset benefits multiple user groups. Residents, tourists, and especially vulnerable populations such as elderly individuals can use it to identify cool indoor locations during extreme heat events.
+We applied DBSCAN with parameters ε = 150 meters and min_samples = 3, which are well-suited for dense urban environments. These parameters allow the detection of meaningful spatial concentrations while ignoring isolated cases. 
 </p>
 
 <p>
-From a technical and societal perspective, the verified AC information can be re-integrated into OpenStreetMap, contributing to community mapping and improving POI completeness. City agencies may also use it to locate safe indoor spaces as part of public heat resilience strategies.
+The results show several notable clusters, especially near Stephansplatz and along Kärntner Straße, where cafés with air conditioning are heavily concentrated. Additional, smaller clusters can be seen around the University area, the Museumsquartier, and further south. 
+Grey points represent noise – cafés that could not be grouped into a cluster – highlighting areas with sparse AC coverage.
 </p>
 
-<p>
-Furthermore, the data can support smart city services – such as route planners or WienBot – by helping users find air-conditioned places nearby. Lastly, it offers a valuable resource for researchers and urban analysts investigating cooling infrastructure and heat vulnerability in dense city centers.
-</p>
+<iframe src="dbscan_cafes_ac_circle.html"></iframe>
 
 <footer>
-  &copy; 2025 – A project based on OpenStreetMap data | Created by [Your Name]
+  &copy; 2025 – A project based on OpenStreetMap data | Created by Stephan Luis Konrad (Group 9)
 </footer>
 
 </body>
