@@ -1,0 +1,3889 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a7b182bcfb86536b1d61302ebb35d160 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+     <h3 align="center" style="font-size:20px"><b>Cafés in Vienna's 1st District by Air Conditioning Availability</b></h3>
+     
+    
+<div style="
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 230px;
+    z-index:9999;
+    font-size:14px;
+    background-color: white;
+    padding: 10px;
+    border:2px solid grey;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);">
+    <b>Legend</b><br>
+    <i class="fa fa-map-marker fa-2x" style="color:green"></i>&nbsp; With Air Conditioning<br>
+    <i class="fa fa-map-marker fa-2x" style="color:red"></i>&nbsp; Without Air Conditioning<br>
+    <i class="fa fa-map-marker fa-2x" style="color:gray"></i>&nbsp; No Information
+</div>
+    
+            <div class="folium-map" id="map_a7b182bcfb86536b1d61302ebb35d160" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a7b182bcfb86536b1d61302ebb35d160 = L.map(
+                "map_a7b182bcfb86536b1d61302ebb35d160",
+                {
+                    center: [48.207875925179856, 16.37087209928058],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_a7b182bcfb86536b1d61302ebb35d160);
+
+            
+
+        
+    
+            var tile_layer_d5f47a77ba3e33f4852723d14f5d4d42 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d5f47a77ba3e33f4852723d14f5d4d42.addTo(map_a7b182bcfb86536b1d61302ebb35d160);
+        
+    
+            var feature_group_ced40244fccae1ecb923f697bd2ee4ce = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_4da551638091f38a34176c30a6a9f982 = L.marker(
+                [48.2103671, 16.3653873],
+                {}
+            ).addTo(feature_group_ced40244fccae1ecb923f697bd2ee4ce);
+        
+    
+            var icon_9b3e6d28f6e07a748dea37af2e9a7b17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_4da551638091f38a34176c30a6a9f982.setIcon(icon_9b3e6d28f6e07a748dea37af2e9a7b17);
+        
+    
+        var popup_f80bc85d6cc21c99d1c6ca784fbeb057 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_89393010508847981a4a55537fa57246 = $(`<div id="html_89393010508847981a4a55537fa57246" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Central<br>     <b>Street:</b> Herrengasse<br>     <b>Opening hours:</b> Mo-Sa 08:00-21:00; PH,Su 10:00-21:00<br>     <b>Website:</b> <a href="https://cafecentral.wien" target="_blank">https://cafecentral.wien</a><br>     <b>Air conditioning:</b> yes     </div>`)[0];
+                popup_f80bc85d6cc21c99d1c6ca784fbeb057.setContent(html_89393010508847981a4a55537fa57246);
+            
+        
+
+        marker_4da551638091f38a34176c30a6a9f982.bindPopup(popup_f80bc85d6cc21c99d1c6ca784fbeb057)
+        ;
+
+        
+    
+    
+            var marker_5dea06619e8d2673504a900c64b42c8d = L.marker(
+                [48.2050258, 16.3694485],
+                {}
+            ).addTo(feature_group_ced40244fccae1ecb923f697bd2ee4ce);
+        
+    
+            var icon_73ec9f6f6c411670a6fd1854203b4915 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_5dea06619e8d2673504a900c64b42c8d.setIcon(icon_73ec9f6f6c411670a6fd1854203b4915);
+        
+    
+        var popup_deba073e501d5b632453ae08b789be2e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_618327f8b1780d3a552122afda3e8b5c = $(`<div id="html_618327f8b1780d3a552122afda3e8b5c" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafe Tirolerhof<br>     <b>Street:</b> Führichgasse<br>     <b>Opening hours:</b> Mo-Fr 08:00-21:00; Su 09:30-20:00<br>     <b>Website:</b> <a href="https://cafetirolerhof.at/" target="_blank">https://cafetirolerhof.at/</a><br>     <b>Air conditioning:</b> yes     </div>`)[0];
+                popup_deba073e501d5b632453ae08b789be2e.setContent(html_618327f8b1780d3a552122afda3e8b5c);
+            
+        
+
+        marker_5dea06619e8d2673504a900c64b42c8d.bindPopup(popup_deba073e501d5b632453ae08b789be2e)
+        ;
+
+        
+    
+    
+            var marker_add7311550597adb5b02b6a401955b2e = L.marker(
+                [48.2031544, 16.3633813],
+                {}
+            ).addTo(feature_group_ced40244fccae1ecb923f697bd2ee4ce);
+        
+    
+            var icon_484d3515ccaa522b47551b4ca857934e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_add7311550597adb5b02b6a401955b2e.setIcon(icon_484d3515ccaa522b47551b4ca857934e);
+        
+    
+        var popup_e929b05ca37d9dd4ddff14af981d1e5e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bd97bc2733b6f8488f6b05a4a86ff6e1 = $(`<div id="html_bd97bc2733b6f8488f6b05a4a86ff6e1" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Pane è Cafe<br>     <b>Street:</b> Elisabethstraße<br>     <b>Opening hours:</b> Mo-Fr 07:00-16:30; Sa 08:00-16:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> yes     </div>`)[0];
+                popup_e929b05ca37d9dd4ddff14af981d1e5e.setContent(html_bd97bc2733b6f8488f6b05a4a86ff6e1);
+            
+        
+
+        marker_add7311550597adb5b02b6a401955b2e.bindPopup(popup_e929b05ca37d9dd4ddff14af981d1e5e)
+        ;
+
+        
+    
+    
+            var marker_c1b85dcd4d87b60266b2d32a91c615bb = L.marker(
+                [48.2033614, 16.3709527],
+                {}
+            ).addTo(feature_group_ced40244fccae1ecb923f697bd2ee4ce);
+        
+    
+            var icon_dafd0abb558fc607795fa771a130c7c6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_c1b85dcd4d87b60266b2d32a91c615bb.setIcon(icon_dafd0abb558fc607795fa771a130c7c6);
+        
+    
+        var popup_1bd2e338ff5a836b62b49fb6b41ba2af = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a999f56f4965a5622ca3410d747047a3 = $(`<div id="html_a999f56f4965a5622ca3410d747047a3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Shodai Macha<br>     <b>Street:</b> Walfischgasse<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> yes     </div>`)[0];
+                popup_1bd2e338ff5a836b62b49fb6b41ba2af.setContent(html_a999f56f4965a5622ca3410d747047a3);
+            
+        
+
+        marker_c1b85dcd4d87b60266b2d32a91c615bb.bindPopup(popup_1bd2e338ff5a836b62b49fb6b41ba2af)
+        ;
+
+        
+    
+    
+            feature_group_ced40244fccae1ecb923f697bd2ee4ce.addTo(map_a7b182bcfb86536b1d61302ebb35d160);
+        
+    
+            var feature_group_7be0a2b42dd394aa8b4c4fa90acfb334 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_aacad0cb8b9191c5798f5df7807c3193 = L.marker(
+                [48.207204, 16.3686497],
+                {}
+            ).addTo(feature_group_7be0a2b42dd394aa8b4c4fa90acfb334);
+        
+    
+            var icon_652ec2057076219fa7a7601c2adf4f83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_aacad0cb8b9191c5798f5df7807c3193.setIcon(icon_652ec2057076219fa7a7601c2adf4f83);
+        
+    
+        var popup_f4e74abede08122eb354e638b46f780e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cf9ef589dc33b02ce88f87bb04c29d1e = $(`<div id="html_cf9ef589dc33b02ce88f87bb04c29d1e" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Bräunerhof<br>     <b>Street:</b> Stallburggasse<br>     <b>Opening hours:</b> Mo-Fr 08:00-19:00; Sa 08:00-18:00; Su,PH 10:00-18:00<br>     <b>Website:</b> <a href="http://www.braeunerhof.at/" target="_blank">http://www.braeunerhof.at/</a><br>     <b>Air conditioning:</b> no     </div>`)[0];
+                popup_f4e74abede08122eb354e638b46f780e.setContent(html_cf9ef589dc33b02ce88f87bb04c29d1e);
+            
+        
+
+        marker_aacad0cb8b9191c5798f5df7807c3193.bindPopup(popup_f4e74abede08122eb354e638b46f780e)
+        ;
+
+        
+    
+    
+            var marker_caf1c09919a70f8496e629d685451c2c = L.marker(
+                [48.2035541, 16.3721998],
+                {}
+            ).addTo(feature_group_7be0a2b42dd394aa8b4c4fa90acfb334);
+        
+    
+            var icon_83a6c1e58d106db86ccc7c05ab6a2b3b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_caf1c09919a70f8496e629d685451c2c.setIcon(icon_83a6c1e58d106db86ccc7c05ab6a2b3b);
+        
+    
+        var popup_164ca2cf2db8bf20202db74b97966a75 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b32bbfa862bc8a5467f84aaa97819621 = $(`<div id="html_b32bbfa862bc8a5467f84aaa97819621" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> NÜD Coffee&Art<br>     <b>Street:</b> Akademiestraße<br>     <b>Opening hours:</b> Mo-Sa 08:00-18:00<br>     <b>Website:</b> <a href="http://nuedcoffee.com" target="_blank">http://nuedcoffee.com</a><br>     <b>Air conditioning:</b> no     </div>`)[0];
+                popup_164ca2cf2db8bf20202db74b97966a75.setContent(html_b32bbfa862bc8a5467f84aaa97819621);
+            
+        
+
+        marker_caf1c09919a70f8496e629d685451c2c.bindPopup(popup_164ca2cf2db8bf20202db74b97966a75)
+        ;
+
+        
+    
+    
+            feature_group_7be0a2b42dd394aa8b4c4fa90acfb334.addTo(map_a7b182bcfb86536b1d61302ebb35d160);
+        
+    
+            var feature_group_cdee1c9616430d316cdbbeaff6ca6fe7 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_c502a4d05de17db0400c0fd6581d3944 = L.marker(
+                [48.2100533, 16.3707177],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_9711444e410c514fb090abebbc3610f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_c502a4d05de17db0400c0fd6581d3944.setIcon(icon_9711444e410c514fb090abebbc3610f9);
+        
+    
+        var popup_1eb4e1b2850650611738c523a499bd6b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f78d4893c06d1185bd65d740a4779635 = $(`<div id="html_f78d4893c06d1185bd65d740a4779635" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Korb<br>     <b>Street:</b> Brandstätte<br>     <b>Opening hours:</b> Mo-Sa 08:00-24:00; PH 10:00-23:00; Su off<br>     <b>Website:</b> <a href="https://cafekorb.at/" target="_blank">https://cafekorb.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_1eb4e1b2850650611738c523a499bd6b.setContent(html_f78d4893c06d1185bd65d740a4779635);
+            
+        
+
+        marker_c502a4d05de17db0400c0fd6581d3944.bindPopup(popup_1eb4e1b2850650611738c523a499bd6b)
+        ;
+
+        
+    
+    
+            var marker_bf1a7532fbc2a88a5db14b249d70914d = L.marker(
+                [48.2080149, 16.3720208],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_08df9120809aca107a489e8350768ab7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_bf1a7532fbc2a88a5db14b249d70914d.setIcon(icon_08df9120809aca107a489e8350768ab7);
+        
+    
+        var popup_c6cbc3744ba67ee42ca37251f9d04117 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_167d0476fba0886dfcbedcabecd7097c = $(`<div id="html_167d0476fba0886dfcbedcabecd7097c" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> aïda<br>     <b>Street:</b> Singerstraße<br>     <b>Opening hours:</b> Mo-Su 07:00-23:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_c6cbc3744ba67ee42ca37251f9d04117.setContent(html_167d0476fba0886dfcbedcabecd7097c);
+            
+        
+
+        marker_bf1a7532fbc2a88a5db14b249d70914d.bindPopup(popup_c6cbc3744ba67ee42ca37251f9d04117)
+        ;
+
+        
+    
+    
+            var marker_08c3bf5d01aa360f63b7d07e0d107df2 = L.marker(
+                [48.2096822, 16.3554887],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_501f946c38d7938feda7cb4224d40750 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_08c3bf5d01aa360f63b7d07e0d107df2.setIcon(icon_501f946c38d7938feda7cb4224d40750);
+        
+    
+        var popup_d4dcf2f12ddd73b452b4ce561bf0ede3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6b9a9631795e32fe47d58cc036daed47 = $(`<div id="html_6b9a9631795e32fe47d58cc036daed47" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Bendl<br>     <b>Street:</b> Landesgerichtsstraße<br>     <b>Opening hours:</b> Mo-Th 08:00-02:00; Fr 08:00-04:00; Sa 18:00-04:00; Su 18:00-02:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_d4dcf2f12ddd73b452b4ce561bf0ede3.setContent(html_6b9a9631795e32fe47d58cc036daed47);
+            
+        
+
+        marker_08c3bf5d01aa360f63b7d07e0d107df2.bindPopup(popup_d4dcf2f12ddd73b452b4ce561bf0ede3)
+        ;
+
+        
+    
+    
+            var marker_086760f474f898f3bd47b9fe1c1284ec = L.marker(
+                [48.2079556, 16.3698053],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_7fbee0671de2fbbef1464c7b03057897 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_086760f474f898f3bd47b9fe1c1284ec.setIcon(icon_7fbee0671de2fbbef1464c7b03057897);
+        
+    
+        var popup_b498ef6c0d06b6593964cf0a48f86a24 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_da924251be5829d3468157103c8c91c6 = $(`<div id="html_da924251be5829d3468157103c8c91c6" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Hawelka<br>     <b>Street:</b> Dorotheergasse<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> <a href="https://www.hawelka.at/" target="_blank">https://www.hawelka.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_b498ef6c0d06b6593964cf0a48f86a24.setContent(html_da924251be5829d3468157103c8c91c6);
+            
+        
+
+        marker_086760f474f898f3bd47b9fe1c1284ec.bindPopup(popup_b498ef6c0d06b6593964cf0a48f86a24)
+        ;
+
+        
+    
+    
+            var marker_9df4de94b015c41f3c5c33d9f1392e96 = L.marker(
+                [48.2126268, 16.3737448],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_fa8072f41abda17d4f1bbc7b7ccba814 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_9df4de94b015c41f3c5c33d9f1392e96.setIcon(icon_fa8072f41abda17d4f1bbc7b7ccba814);
+        
+    
+        var popup_e90f64998b1de25a698754d7178a01af = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f2f4f76c66d533c28702861b300d2629 = $(`<div id="html_f2f4f76c66d533c28702861b300d2629" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Billardcafe Köö<br>     <b>Street:</b> Salzgries<br>     <b>Opening hours:</b> Mo-Th 10:00-02:00; Fr-Sa 10:00-04:00; Su,PH 12:00-02:00<br>     <b>Website:</b> <a href="http://billardcafe.at" target="_blank">http://billardcafe.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_e90f64998b1de25a698754d7178a01af.setContent(html_f2f4f76c66d533c28702861b300d2629);
+            
+        
+
+        marker_9df4de94b015c41f3c5c33d9f1392e96.bindPopup(popup_e90f64998b1de25a698754d7178a01af)
+        ;
+
+        
+    
+    
+            var marker_bbbe7bdaebeb5702e829a33a2e27624e = L.marker(
+                [48.2115624, 16.3614497],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_c6525ac4d9dc4e059935e932fb39d23f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_bbbe7bdaebeb5702e829a33a2e27624e.setIcon(icon_c6525ac4d9dc4e059935e932fb39d23f);
+        
+    
+        var popup_d3390ca2a6b36e85618012be5bd34f76 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b00ada47e023d37b6153ee4e32ae0f51 = $(`<div id="html_b00ada47e023d37b6153ee4e32ae0f51" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Landtmann<br>     <b>Street:</b> Universitätsring<br>     <b>Opening hours:</b> Mo-Su 07:30-24:00<br>     <b>Website:</b> <a href="https://www.landtmann.at/" target="_blank">https://www.landtmann.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_d3390ca2a6b36e85618012be5bd34f76.setContent(html_b00ada47e023d37b6153ee4e32ae0f51);
+            
+        
+
+        marker_bbbe7bdaebeb5702e829a33a2e27624e.bindPopup(popup_d3390ca2a6b36e85618012be5bd34f76)
+        ;
+
+        
+    
+    
+            var marker_02f89e2fb78cbdd429bd2d79f2540120 = L.marker(
+                [48.2116935, 16.3762952],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_df9a1dfe0d91b2a72d9ae86b4e472757 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_02f89e2fb78cbdd429bd2d79f2540120.setIcon(icon_df9a1dfe0d91b2a72d9ae86b4e472757);
+        
+    
+        var popup_70b42605c7e07d981e542f101278d279 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_35b9b2f2cc31b1c625eded29cb8d7bb1 = $(`<div id="html_35b9b2f2cc31b1c625eded29cb8d7bb1" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Castelletto<br>     <b>Street:</b> Rotenturmstraße<br>     <b>Opening hours:</b> Mo-Sa 07:00-24:00; Su 08:00-24:00; PH 08:00-24:00<br>     <b>Website:</b> <a href="https://www.castelletto.at/" target="_blank">https://www.castelletto.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_70b42605c7e07d981e542f101278d279.setContent(html_35b9b2f2cc31b1c625eded29cb8d7bb1);
+            
+        
+
+        marker_02f89e2fb78cbdd429bd2d79f2540120.bindPopup(popup_70b42605c7e07d981e542f101278d279)
+        ;
+
+        
+    
+    
+            var marker_6989bbbd476ae65c0d7cd4aab64057c8 = L.marker(
+                [48.2094529, 16.3576889],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_8ee353c3ce7a405e00f84fc705fff906 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_6989bbbd476ae65c0d7cd4aab64057c8.setIcon(icon_8ee353c3ce7a405e00f84fc705fff906);
+        
+    
+        var popup_d912b0c76d40140436905353bf971505 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_250c121f2c52b1a06b0a9c506797bc18 = $(`<div id="html_250c121f2c52b1a06b0a9c506797bc18" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Conditorei Sluka<br>     <b>Street:</b> Rathausplatz<br>     <b>Opening hours:</b> Mo-Fr 08:00-19:00;Sa 08:00-17:30;Su 10:00-17:30<br>     <b>Website:</b> <a href="https://www.sluka.at/" target="_blank">https://www.sluka.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_d912b0c76d40140436905353bf971505.setContent(html_250c121f2c52b1a06b0a9c506797bc18);
+            
+        
+
+        marker_6989bbbd476ae65c0d7cd4aab64057c8.bindPopup(popup_d912b0c76d40140436905353bf971505)
+        ;
+
+        
+    
+    
+            var marker_a14a26f8b7c25a5b849636b6a5689602 = L.marker(
+                [48.2043161, 16.3746746],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_934cc036e942c13c5a2bdc11f9d15217 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a14a26f8b7c25a5b849636b6a5689602.setIcon(icon_934cc036e942c13c5a2bdc11f9d15217);
+        
+    
+        var popup_7f1cdf77c5d0adeba895ae0896ba1ccd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6de0374208b281608885137cf2e56968 = $(`<div id="html_6de0374208b281608885137cf2e56968" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Wolfbauer<br>     <b>Street:</b> Johannesgasse<br>     <b>Opening hours:</b> Mo-Fr 06:00-17:00<br>     <b>Website:</b> <a href="https://www.cafe-wolfbauer.at/" target="_blank">https://www.cafe-wolfbauer.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_7f1cdf77c5d0adeba895ae0896ba1ccd.setContent(html_6de0374208b281608885137cf2e56968);
+            
+        
+
+        marker_a14a26f8b7c25a5b849636b6a5689602.bindPopup(popup_7f1cdf77c5d0adeba895ae0896ba1ccd)
+        ;
+
+        
+    
+    
+            var marker_bcd31c9df30a2fab033eb0841fda7a92 = L.marker(
+                [48.2101521, 16.3780993],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_ab1d4db5811c50d49f720c2d9e02fa02 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_bcd31c9df30a2fab033eb0841fda7a92.setIcon(icon_ab1d4db5811c50d49f720c2d9e02fa02);
+        
+    
+        var popup_c33af11c3b0f1cdac01721edb18d89f2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f66f95233c125e33254fd504c661ed17 = $(`<div id="html_f66f95233c125e33254fd504c661ed17" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Le Café<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_c33af11c3b0f1cdac01721edb18d89f2.setContent(html_f66f95233c125e33254fd504c661ed17);
+            
+        
+
+        marker_bcd31c9df30a2fab033eb0841fda7a92.bindPopup(popup_c33af11c3b0f1cdac01721edb18d89f2)
+        ;
+
+        
+    
+    
+            var marker_824bd680a7bb3359de36262e121d15eb = L.marker(
+                [48.2042359, 16.3694106],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_265e803d6022a0c3653a6341a8320d6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_824bd680a7bb3359de36262e121d15eb.setIcon(icon_265e803d6022a0c3653a6341a8320d6e);
+        
+    
+        var popup_7e2ce3b6a2eef12d7a276ebe6ce29916 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e06736cf0c399d3869acfa0eb93c0c54 = $(`<div id="html_e06736cf0c399d3869acfa0eb93c0c54" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafe Mozart<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Su 08:00-00:00<br>     <b>Website:</b> <a href="https://www.cafe-mozart.at/" target="_blank">https://www.cafe-mozart.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_7e2ce3b6a2eef12d7a276ebe6ce29916.setContent(html_e06736cf0c399d3869acfa0eb93c0c54);
+            
+        
+
+        marker_824bd680a7bb3359de36262e121d15eb.bindPopup(popup_7e2ce3b6a2eef12d7a276ebe6ce29916)
+        ;
+
+        
+    
+    
+            var marker_4d0c501007737077311b5a5086134e38 = L.marker(
+                [48.2100861, 16.3704114],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_09a4450159f56060f9a9a0a57d7a2c0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_4d0c501007737077311b5a5086134e38.setIcon(icon_09a4450159f56060f9a9a0a57d7a2c0a);
+        
+    
+        var popup_a4d07058107e2764548ead7e78b2efbe = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e086ba623f68d0040ca7623f0f7b2e66 = $(`<div id="html_e086ba623f68d0040ca7623f0f7b2e66" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Caffè Delia's<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Sa 08:00-24:00, Su 10:00-24:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_a4d07058107e2764548ead7e78b2efbe.setContent(html_e086ba623f68d0040ca7623f0f7b2e66);
+            
+        
+
+        marker_4d0c501007737077311b5a5086134e38.bindPopup(popup_a4d07058107e2764548ead7e78b2efbe)
+        ;
+
+        
+    
+    
+            var marker_a31d8ef9d4806b8fb79b18c05837a0bc = L.marker(
+                [48.2067216, 16.3707002],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_707241e455922ee21b380c8e7a8b98fd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a31d8ef9d4806b8fb79b18c05837a0bc.setIcon(icon_707241e455922ee21b380c8e7a8b98fd);
+        
+    
+        var popup_e87700586280233d4b82fc1b8e0c354a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_61edfa3fa1e10e39d931d7545f726439 = $(`<div id="html_61edfa3fa1e10e39d931d7545f726439" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Kurkonditorei Oberlaa<br>     <b>Street:</b> Neuer Markt<br>     <b>Opening hours:</b> Mo-Su 08:00-20:00<br>     <b>Website:</b> <a href="https://oberlaa-wien.at/standorte/standort-neuer-markt/" target="_blank">https://oberlaa-wien.at/standorte/standort-neuer-markt/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_e87700586280233d4b82fc1b8e0c354a.setContent(html_61edfa3fa1e10e39d931d7545f726439);
+            
+        
+
+        marker_a31d8ef9d4806b8fb79b18c05837a0bc.bindPopup(popup_e87700586280233d4b82fc1b8e0c354a)
+        ;
+
+        
+    
+    
+            var marker_dd6c8c161d829adea0cf901aeed88fe8 = L.marker(
+                [48.2091716, 16.3761236],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_6204435a92e76337df0c8c9d0f63dbc5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_dd6c8c161d829adea0cf901aeed88fe8.setIcon(icon_6204435a92e76337df0c8c9d0f63dbc5);
+        
+    
+        var popup_4d321e28f424fc432111ad7eec14b664 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_253bbfb36e695ec2358f4ade91ae25ff = $(`<div id="html_253bbfb36e695ec2358f4ade91ae25ff" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Kaffee Alt Wien<br>     <b>Street:</b> Bäckerstraße<br>     <b>Opening hours:</b> Mo-Su, PH 09:00-02:00, Dec 24 off<br>     <b>Website:</b> <a href="https://www.kaffeealtwien.at/" target="_blank">https://www.kaffeealtwien.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_4d321e28f424fc432111ad7eec14b664.setContent(html_253bbfb36e695ec2358f4ade91ae25ff);
+            
+        
+
+        marker_dd6c8c161d829adea0cf901aeed88fe8.bindPopup(popup_4d321e28f424fc432111ad7eec14b664)
+        ;
+
+        
+    
+    
+            var marker_d6f4069e5ad5373aa772c37fc3ecde82 = L.marker(
+                [48.2033727, 16.363197],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_e1cc43550e1ae711393a3be3567b8d9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d6f4069e5ad5373aa772c37fc3ecde82.setIcon(icon_e1cc43550e1ae711393a3be3567b8d9a);
+        
+    
+        var popup_331f0e6e19f3274ccd813461535ffb8f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5a92325c5adf1f8aa7a0d9b39740de9c = $(`<div id="html_5a92325c5adf1f8aa7a0d9b39740de9c" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Crêpe & Waffles paradise<br>     <b>Street:</b> Babenbergerstraße<br>     <b>Opening hours:</b> Mo-Su 12:00-19:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_331f0e6e19f3274ccd813461535ffb8f.setContent(html_5a92325c5adf1f8aa7a0d9b39740de9c);
+            
+        
+
+        marker_d6f4069e5ad5373aa772c37fc3ecde82.bindPopup(popup_331f0e6e19f3274ccd813461535ffb8f)
+        ;
+
+        
+    
+    
+            var marker_bea0f9d802de5f1751b481b40debc280 = L.marker(
+                [48.2126214, 16.3639968],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_887d6686957a822ddbe474c4441c4dc8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_bea0f9d802de5f1751b481b40debc280.setIcon(icon_887d6686957a822ddbe474c4441c4dc8);
+        
+    
+        var popup_783bd095d344a5b15015655b4f38ecf5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f154e878d44017dfb232933429344c6a = $(`<div id="html_f154e878d44017dfb232933429344c6a" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafe Diglas im Schottenstift<br>     <b>Street:</b> Schottengasse<br>     <b>Opening hours:</b> 08:00-22:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_783bd095d344a5b15015655b4f38ecf5.setContent(html_f154e878d44017dfb232933429344c6a);
+            
+        
+
+        marker_bea0f9d802de5f1751b481b40debc280.bindPopup(popup_783bd095d344a5b15015655b4f38ecf5)
+        ;
+
+        
+    
+    
+            var marker_08cb329c8aff1a6246fff6f1a23c3897 = L.marker(
+                [48.2080379, 16.3786359],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_cc2d15096ac0766cd2b5e702186eac00 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_08cb329c8aff1a6246fff6f1a23c3897.setIcon(icon_cc2d15096ac0766cd2b5e702186eac00);
+        
+    
+        var popup_961e7fa4d55c50d02d213960525cd264 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8f52c94322cdba3110e4f0977fd4ffee = $(`<div id="html_8f52c94322cdba3110e4f0977fd4ffee" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Engländer<br>     <b>Street:</b> Postgasse<br>     <b>Opening hours:</b> Mo-Sa 08:00-01:00; Su,PH 10:00-01:00<br>     <b>Website:</b> <a href="https://www.cafe-englaender.com/" target="_blank">https://www.cafe-englaender.com/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_961e7fa4d55c50d02d213960525cd264.setContent(html_8f52c94322cdba3110e4f0977fd4ffee);
+            
+        
+
+        marker_08cb329c8aff1a6246fff6f1a23c3897.bindPopup(popup_961e7fa4d55c50d02d213960525cd264)
+        ;
+
+        
+    
+    
+            var marker_db091bd22280e732070fbf794fa6260a = L.marker(
+                [48.205727, 16.3722936],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_298684329b52834d303b7136d1f1d9d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_db091bd22280e732070fbf794fa6260a.setIcon(icon_298684329b52834d303b7136d1f1d9d6);
+        
+    
+        var popup_fdbddb1324c0368e2998b98b6e4bf795 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_568fe443d20f834480ee987a501917bd = $(`<div id="html_568fe443d20f834480ee987a501917bd" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Frauenhuber<br>     <b>Street:</b> Himmelpfortgasse<br>     <b>Opening hours:</b> Mo-Sa 08:00-22:00; Su,PH 10:00-20:00<br>     <b>Website:</b> <a href="https://www.cafefrauenhuber.at/" target="_blank">https://www.cafefrauenhuber.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_fdbddb1324c0368e2998b98b6e4bf795.setContent(html_568fe443d20f834480ee987a501917bd);
+            
+        
+
+        marker_db091bd22280e732070fbf794fa6260a.bindPopup(popup_fdbddb1324c0368e2998b98b6e4bf795)
+        ;
+
+        
+    
+    
+            var marker_4dc8dbe01aac8fa4a1f02c7b44135e67 = L.marker(
+                [48.2014066, 16.3676093],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_cbd39ef75b2b0b273f61873c7b911bd2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_4dc8dbe01aac8fa4a1f02c7b44135e67.setIcon(icon_cbd39ef75b2b0b273f61873c7b911bd2);
+        
+    
+        var popup_8558839d64555d585be00ac2d47c74d6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f5ba0b5cf92d4d5a0ca3e18b03515de4 = $(`<div id="html_f5ba0b5cf92d4d5a0ca3e18b03515de4" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Museum<br>     <b>Street:</b> Operngasse<br>     <b>Opening hours:</b> 08:00-24:00<br>     <b>Website:</b> <a href="https://www.cafemuseum.at/" target="_blank">https://www.cafemuseum.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_8558839d64555d585be00ac2d47c74d6.setContent(html_f5ba0b5cf92d4d5a0ca3e18b03515de4);
+            
+        
+
+        marker_4dc8dbe01aac8fa4a1f02c7b44135e67.bindPopup(popup_8558839d64555d585be00ac2d47c74d6)
+        ;
+
+        
+    
+    
+            var marker_5796a7bffb2c5893ac07d6b96c732cd8 = L.marker(
+                [48.2018516, 16.3739176],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_80add12bd5a317fd2b5c0b562845fa41 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_5796a7bffb2c5893ac07d6b96c732cd8.setIcon(icon_80add12bd5a317fd2b5c0b562845fa41);
+        
+    
+        var popup_6cb0869b6efceb03088f4fc283d9a6e4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_31cd5a98d058d9040fc60b8ee57331de = $(`<div id="html_31cd5a98d058d9040fc60b8ee57331de" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Schwarzenberg<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 07:30-24:00; Sa,Su 08:30-24:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_6cb0869b6efceb03088f4fc283d9a6e4.setContent(html_31cd5a98d058d9040fc60b8ee57331de);
+            
+        
+
+        marker_5796a7bffb2c5893ac07d6b96c732cd8.bindPopup(popup_6cb0869b6efceb03088f4fc283d9a6e4)
+        ;
+
+        
+    
+    
+            var marker_c300a83bba249c96e769e30add80a149 = L.marker(
+                [48.2065835, 16.3743582],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_044ff813c6024b3d20260d3785d1f657 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_c300a83bba249c96e769e30add80a149.setIcon(icon_044ff813c6024b3d20260d3785d1f657);
+        
+    
+        var popup_ba72228ef5201713c89c7aca00be8f03 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_54908a3ee0ea729b8fe6a3c7d22a4955 = $(`<div id="html_54908a3ee0ea729b8fe6a3c7d22a4955" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Kleines Cafe<br>     <b>Street:</b> Franziskanerplatz<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_ba72228ef5201713c89c7aca00be8f03.setContent(html_54908a3ee0ea729b8fe6a3c7d22a4955);
+            
+        
+
+        marker_c300a83bba249c96e769e30add80a149.bindPopup(popup_ba72228ef5201713c89c7aca00be8f03)
+        ;
+
+        
+    
+    
+            var marker_1f41537aa2515ac18e3fc43aaf869d45 = L.marker(
+                [48.2099319, 16.3684339],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_5f640e1258e42fe64d4b7ab5d22c6de0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_1f41537aa2515ac18e3fc43aaf869d45.setIcon(icon_5f640e1258e42fe64d4b7ab5d22c6de0);
+        
+    
+        var popup_3860733742170c3b386ab701cc63f217 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6f7ebd8bfb3fbe188601836b71c69d25 = $(`<div id="html_6f7ebd8bfb3fbe188601836b71c69d25" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> aïda<br>     <b>Street:</b> Bognergasse<br>     <b>Opening hours:</b> Mo-Su 08:00-20:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_3860733742170c3b386ab701cc63f217.setContent(html_6f7ebd8bfb3fbe188601836b71c69d25);
+            
+        
+
+        marker_1f41537aa2515ac18e3fc43aaf869d45.bindPopup(popup_3860733742170c3b386ab701cc63f217)
+        ;
+
+        
+    
+    
+            var marker_6484fae4d5e534510a77c9855d388631 = L.marker(
+                [48.2111943, 16.3658272],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_df5bf0a50704cbbef13283c096dd537d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_6484fae4d5e534510a77c9855d388631.setIcon(icon_df5bf0a50704cbbef13283c096dd537d);
+        
+    
+        var popup_799a99195da5af20b4fccfce01ac9c64 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8348c8520a5e5d2e24c23b40107f34f1 = $(`<div id="html_8348c8520a5e5d2e24c23b40107f34f1" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Stadtcafé<br>     <b>Street:</b> Freyung<br>     <b>Opening hours:</b> Mo-Sa 08:00-24:00, Su,PH 09:00-22:00<br>     <b>Website:</b> <a href="https://www.stadtcafe-wien.at/" target="_blank">https://www.stadtcafe-wien.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_799a99195da5af20b4fccfce01ac9c64.setContent(html_8348c8520a5e5d2e24c23b40107f34f1);
+            
+        
+
+        marker_6484fae4d5e534510a77c9855d388631.bindPopup(popup_799a99195da5af20b4fccfce01ac9c64)
+        ;
+
+        
+    
+    
+            var marker_ca5d00651489672647775ad7d2472dd7 = L.marker(
+                [48.2099753, 16.3787678],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_7ec175d66f0b0d6a6ce353874ee6b157 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_ca5d00651489672647775ad7d2472dd7.setIcon(icon_7ec175d66f0b0d6a6ce353874ee6b157);
+        
+    
+        var popup_a21180baff97254270cac7839ae2d4d4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_74baf612d55899a1197b4e2c206ce19f = $(`<div id="html_74baf612d55899a1197b4e2c206ce19f" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café AS<br>     <b>Street:</b> Fleischmarkt<br>     <b>Opening hours:</b> Mo-Fr 12:00-23:00; Sa 15:00-23:00; Jul-Aug: 10:00-24:00; Su, PH off<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_a21180baff97254270cac7839ae2d4d4.setContent(html_74baf612d55899a1197b4e2c206ce19f);
+            
+        
+
+        marker_ca5d00651489672647775ad7d2472dd7.bindPopup(popup_a21180baff97254270cac7839ae2d4d4)
+        ;
+
+        
+    
+    
+            var marker_a1e45b2d5f9559e67c91be171b0be2f5 = L.marker(
+                [48.2113987, 16.3760259],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_4ad0408b9026c7671d2bce9dcf0844d0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a1e45b2d5f9559e67c91be171b0be2f5.setIcon(icon_4ad0408b9026c7671d2bce9dcf0844d0);
+        
+    
+        var popup_4abb8dd7f21e3463d19be4d2b240f644 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_91a1f18a04ec8019214b17cb17c1c9f6 = $(`<div id="html_91a1f18a04ec8019214b17cb17c1c9f6" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Starbucks<br>     <b>Street:</b> Rotenturmstraße<br>     <b>Opening hours:</b> Su-We 07:00-21:30; Th 07:00-22:30; Fr 08:30-22:30; Sa 08:30-21:30<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_4abb8dd7f21e3463d19be4d2b240f644.setContent(html_91a1f18a04ec8019214b17cb17c1c9f6);
+            
+        
+
+        marker_a1e45b2d5f9559e67c91be171b0be2f5.bindPopup(popup_4abb8dd7f21e3463d19be4d2b240f644)
+        ;
+
+        
+    
+    
+            var marker_b7c6c419634d5f4dcbc9c10f4077201d = L.marker(
+                [48.2112545, 16.3781476],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_7196e492c061419a6352e5b4241d0f19 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_b7c6c419634d5f4dcbc9c10f4077201d.setIcon(icon_7196e492c061419a6352e5b4241d0f19);
+        
+    
+        var popup_7498b17b6e453ce2536f9749a9088e48 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c707bae59c69fb313acc40c5be62e511 = $(`<div id="html_c707bae59c69fb313acc40c5be62e511" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Anker<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 05:00-19:00; PH,Sa,Su 05:00-19:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_7498b17b6e453ce2536f9749a9088e48.setContent(html_c707bae59c69fb313acc40c5be62e511);
+            
+        
+
+        marker_b7c6c419634d5f4dcbc9c10f4077201d.bindPopup(popup_7498b17b6e453ce2536f9749a9088e48)
+        ;
+
+        
+    
+    
+            var marker_212fd18b7841a8c2ff5d7ef27bc480f2 = L.marker(
+                [48.202479, 16.3676803],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_383800f820ec666c7427becda55e31d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_212fd18b7841a8c2ff5d7ef27bc480f2.setIcon(icon_383800f820ec666c7427becda55e31d5);
+        
+    
+        var popup_5bee17abe025056b98248349c587b4cb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_30b98fcad994dfde54c6fd20936e4b50 = $(`<div id="html_30b98fcad994dfde54c6fd20936e4b50" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> aïda<br>     <b>Street:</b> Opernring<br>     <b>Opening hours:</b> Mo-Fr 07:00-21:00; Sa 08:00-21:00; Su,PH 08:00-21:00<br>     <b>Website:</b> <a href="https://aida.at/?page_id=1231" target="_blank">https://aida.at/?page_id=1231</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_5bee17abe025056b98248349c587b4cb.setContent(html_30b98fcad994dfde54c6fd20936e4b50);
+            
+        
+
+        marker_212fd18b7841a8c2ff5d7ef27bc480f2.bindPopup(popup_5bee17abe025056b98248349c587b4cb)
+        ;
+
+        
+    
+    
+            var marker_d2d27713d9b6226c77ae90899a8f0468 = L.marker(
+                [48.2086459, 16.3752673],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_ec965b232feadf8f4e3d8efd87f34bbf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d2d27713d9b6226c77ae90899a8f0468.setIcon(icon_ec965b232feadf8f4e3d8efd87f34bbf);
+        
+    
+        var popup_6facf9641b02b7816fd981664dd0eab7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_706a74ae3d2c1e761a5f7040b719f092 = $(`<div id="html_706a74ae3d2c1e761a5f7040b719f092" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Diglas<br>     <b>Street:</b> Wollzeile<br>     <b>Opening hours:</b> Mo-Fr 08:00-22:30; Sa 09:00-22:30; PH off<br>     <b>Website:</b> <a href="https://www.diglas.at" target="_blank">https://www.diglas.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_6facf9641b02b7816fd981664dd0eab7.setContent(html_706a74ae3d2c1e761a5f7040b719f092);
+            
+        
+
+        marker_d2d27713d9b6226c77ae90899a8f0468.bindPopup(popup_6facf9641b02b7816fd981664dd0eab7)
+        ;
+
+        
+    
+    
+            var marker_ed5325b9b96269d2451aa310521d0d7c = L.marker(
+                [48.2035189, 16.3758028],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_9f815748bb2324a752f71ad06461f78b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_ed5325b9b96269d2451aa310521d0d7c.setIcon(icon_9f815748bb2324a752f71ad06461f78b);
+        
+    
+        var popup_f90930aa628921ddf10fd698aa4ee491 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c40ec3c1100a0c23cf6dd43e829fbd16 = $(`<div id="html_c40ec3c1100a0c23cf6dd43e829fbd16" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Hegelhof<br>     <b>Street:</b> Johannesgasse<br>     <b>Opening hours:</b> Tu-Sa 09:00-20:00<br>     <b>Website:</b> <a href="https://www.cafehegelhof.com/" target="_blank">https://www.cafehegelhof.com/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_f90930aa628921ddf10fd698aa4ee491.setContent(html_c40ec3c1100a0c23cf6dd43e829fbd16);
+            
+        
+
+        marker_ed5325b9b96269d2451aa310521d0d7c.bindPopup(popup_f90930aa628921ddf10fd698aa4ee491)
+        ;
+
+        
+    
+    
+            var marker_9dd77fbc8afaadb5202cbed74ffff583 = L.marker(
+                [48.2032311, 16.3759528],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_70c0015fb2667f09df16489b14065f3f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_9dd77fbc8afaadb5202cbed74ffff583.setIcon(icon_70c0015fb2667f09df16489b14065f3f);
+        
+    
+        var popup_f934aca85cf77c19d52d89ee30dc75db = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b0e37cdd77b075f60472b69b1dc76d66 = $(`<div id="html_b0e37cdd77b075f60472b69b1dc76d66" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Kotor<br>     <b>Street:</b> Schubertring<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_f934aca85cf77c19d52d89ee30dc75db.setContent(html_b0e37cdd77b075f60472b69b1dc76d66);
+            
+        
+
+        marker_9dd77fbc8afaadb5202cbed74ffff583.bindPopup(popup_f934aca85cf77c19d52d89ee30dc75db)
+        ;
+
+        
+    
+    
+            var marker_53eff8621f3d289e13684d6d6b3bfde1 = L.marker(
+                [48.2054152, 16.3748203],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_54b5022c3b2870bb1f707905800c805b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_53eff8621f3d289e13684d6d6b3bfde1.setIcon(icon_54b5022c3b2870bb1f707905800c805b);
+        
+    
+        var popup_eb3894d000bd91dc4ab5ab9e54934567 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5545365acafe56f0bc82d5a03d304edc = $(`<div id="html_5545365acafe56f0bc82d5a03d304edc" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafe-Confiserie Ronacher<br>     <b>Street:</b> Seilerstätte<br>     <b>Opening hours:</b> Tu,We 14:00-19:00; Th-Sa 14:00-22:00; Su,Mo off<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_eb3894d000bd91dc4ab5ab9e54934567.setContent(html_5545365acafe56f0bc82d5a03d304edc);
+            
+        
+
+        marker_53eff8621f3d289e13684d6d6b3bfde1.bindPopup(popup_eb3894d000bd91dc4ab5ab9e54934567)
+        ;
+
+        
+    
+    
+            var marker_3cac029761eeb184007bbd80b003fa92 = L.marker(
+                [48.2105441, 16.3749331],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_7a0757f8cc80bd685cc2b9955ad4d726 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_3cac029761eeb184007bbd80b003fa92.setIcon(icon_7a0757f8cc80bd685cc2b9955ad4d726);
+        
+    
+        var popup_366d704f5d6c3cc346252aa74cc0ff2e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_36198a67dd7e227cbc181c48f24ef95e = $(`<div id="html_36198a67dd7e227cbc181c48f24ef95e" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Daniel Moser<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_366d704f5d6c3cc346252aa74cc0ff2e.setContent(html_36198a67dd7e227cbc181c48f24ef95e);
+            
+        
+
+        marker_3cac029761eeb184007bbd80b003fa92.bindPopup(popup_366d704f5d6c3cc346252aa74cc0ff2e)
+        ;
+
+        
+    
+    
+            var marker_43b7312b75e78284c9a331e3405a7050 = L.marker(
+                [48.2067834, 16.3717382],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_03df2d938313be8c662e41213de1399b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_43b7312b75e78284c9a331e3405a7050.setIcon(icon_03df2d938313be8c662e41213de1399b);
+        
+    
+        var popup_be087e9ece45d01a156c0008a7363838 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1100026ee1c8d26e98b58d4621403b97 = $(`<div id="html_1100026ee1c8d26e98b58d4621403b97" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Conditorei Sluka<br>     <b>Street:</b> Kärntner Straße<br>     <b>Opening hours:</b> Mo-Th 08:00-20:00; Fr 08:00-21:00; Sa 09:00-21:00; PH,Su 10:00-17:00<br>     <b>Website:</b> <a href="https://www.sluka.at" target="_blank">https://www.sluka.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_be087e9ece45d01a156c0008a7363838.setContent(html_1100026ee1c8d26e98b58d4621403b97);
+            
+        
+
+        marker_43b7312b75e78284c9a331e3405a7050.bindPopup(popup_be087e9ece45d01a156c0008a7363838)
+        ;
+
+        
+    
+    
+            var marker_9b9393b209d7181b7d490f7dec8c699c = L.marker(
+                [48.2089745, 16.3750576],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_7cb71f869a5d0be5d8e67c1baeae13ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_9b9393b209d7181b7d490f7dec8c699c.setIcon(icon_7cb71f869a5d0be5d8e67c1baeae13ca);
+        
+    
+        var popup_bf5a699be61968bbdf41255d213beb63 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e76a97ed4a5e30a3dd5dcfa46d77ee1d = $(`<div id="html_e76a97ed4a5e30a3dd5dcfa46d77ee1d" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> L. Heiner Hofzuckerbäcker<br>     <b>Street:</b> Wollzeile<br>     <b>Opening hours:</b> Mo-Sa 09:00-18:30; PH,Su 10:00-18:30<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_bf5a699be61968bbdf41255d213beb63.setContent(html_e76a97ed4a5e30a3dd5dcfa46d77ee1d);
+            
+        
+
+        marker_9b9393b209d7181b7d490f7dec8c699c.bindPopup(popup_bf5a699be61968bbdf41255d213beb63)
+        ;
+
+        
+    
+    
+            var marker_e4a39f1200583a17910641b0daa675d5 = L.marker(
+                [48.2080861, 16.3776146],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_67b9ed721f6151ad6c1f60ee01ab4537 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_e4a39f1200583a17910641b0daa675d5.setIcon(icon_67b9ed721f6151ad6c1f60ee01ab4537);
+        
+    
+        var popup_e2c65d0065ae34f5444e79d5382f51d8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1a34a757378ed63274dd514e8cfee6b4 = $(`<div id="html_1a34a757378ed63274dd514e8cfee6b4" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Il Bosso<br>     <b>Street:</b> Wollzeile<br>     <b>Opening hours:</b> Mo-Sa 12:00-22:00; Su 12:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_e2c65d0065ae34f5444e79d5382f51d8.setContent(html_1a34a757378ed63274dd514e8cfee6b4);
+            
+        
+
+        marker_e4a39f1200583a17910641b0daa675d5.bindPopup(popup_e2c65d0065ae34f5444e79d5382f51d8)
+        ;
+
+        
+    
+    
+            var marker_92734c54b42e24c35021243c6119fb95 = L.marker(
+                [48.2078941, 16.3775468],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_fd548e8f91973b3ff0115c1256e03bd2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_92734c54b42e24c35021243c6119fb95.setIcon(icon_fd548e8f91973b3ff0115c1256e03bd2);
+        
+    
+        var popup_38a315533ef23c828fa911be616d1e86 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_86fd85a4ab398f09dcb2e66109127575 = $(`<div id="html_86fd85a4ab398f09dcb2e66109127575" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> aïda<br>     <b>Street:</b> Wollzeile<br>     <b>Opening hours:</b> Mo-Fr 07:30-20:00; Sa 09:00-20:00; Su,PH 08:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_38a315533ef23c828fa911be616d1e86.setContent(html_86fd85a4ab398f09dcb2e66109127575);
+            
+        
+
+        marker_92734c54b42e24c35021243c6119fb95.bindPopup(popup_38a315533ef23c828fa911be616d1e86)
+        ;
+
+        
+    
+    
+            var marker_ea30861ff7b2fb6a6ad17a61933e937d = L.marker(
+                [48.2070468, 16.3767927],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_7f7633b3cf41b02bed8912584b52a154 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_ea30861ff7b2fb6a6ad17a61933e937d.setIcon(icon_7f7633b3cf41b02bed8912584b52a154);
+        
+    
+        var popup_d9dc044b7ea251a2b440de681c095190 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_79135498f73255295f6534a843d18ba2 = $(`<div id="html_79135498f73255295f6534a843d18ba2" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Peters Cafe Hartauer<br>     <b>Street:</b> Riemergasse<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> <a href="http://www.petersoperncafe.at" target="_blank">http://www.petersoperncafe.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_d9dc044b7ea251a2b440de681c095190.setContent(html_79135498f73255295f6534a843d18ba2);
+            
+        
+
+        marker_ea30861ff7b2fb6a6ad17a61933e937d.bindPopup(popup_d9dc044b7ea251a2b440de681c095190)
+        ;
+
+        
+    
+    
+            var marker_a7e28bb0690c98fc9170575ced7b252d = L.marker(
+                [48.204921, 16.3719323],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_9e6dd3a4b23b917070d47f2af79d80e3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a7e28bb0690c98fc9170575ced7b252d.setIcon(icon_9e6dd3a4b23b917070d47f2af79d80e3);
+        
+    
+        var popup_8d6a98a7a9f1b10393e7e1d292537246 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ce01aea799920983d4d8568e2d8faa44 = $(`<div id="html_ce01aea799920983d4d8568e2d8faa44" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Metro Kinobar<br>     <b>Street:</b> Johannesgasse<br>     <b>Opening hours:</b> Mo-Su 17:00-23:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_8d6a98a7a9f1b10393e7e1d292537246.setContent(html_ce01aea799920983d4d8568e2d8faa44);
+            
+        
+
+        marker_a7e28bb0690c98fc9170575ced7b252d.bindPopup(popup_8d6a98a7a9f1b10393e7e1d292537246)
+        ;
+
+        
+    
+    
+            var marker_e85d01461f144a32a47a66d583bb3b7f = L.marker(
+                [48.2081226, 16.37496],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_af01e1aefcec52a2a8ae136be73618b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_e85d01461f144a32a47a66d583bb3b7f.setIcon(icon_af01e1aefcec52a2a8ae136be73618b4);
+        
+    
+        var popup_432effc97d65ee11f2d80e24c56bab7e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2e62581f1d12161e8590a3eca93e6e43 = $(`<div id="html_2e62581f1d12161e8590a3eca93e6e43" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafe Figaro<br>     <b>Street:</b> Domgasse<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_432effc97d65ee11f2d80e24c56bab7e.setContent(html_2e62581f1d12161e8590a3eca93e6e43);
+            
+        
+
+        marker_e85d01461f144a32a47a66d583bb3b7f.bindPopup(popup_432effc97d65ee11f2d80e24c56bab7e)
+        ;
+
+        
+    
+    
+            var marker_96155e305b26843c72134a0ac50e764f = L.marker(
+                [48.2083193, 16.3749277],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_849859c3b36955a9a227fdf6104507f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_96155e305b26843c72134a0ac50e764f.setIcon(icon_849859c3b36955a9a227fdf6104507f4);
+        
+    
+        var popup_0abd912ef92157a453681948977b8e02 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a3010366db353c6d5c266f61b95a2aa5 = $(`<div id="html_a3010366db353c6d5c266f61b95a2aa5" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafe Porta<br>     <b>Street:</b> Schulerstraße<br>     <b>Opening hours:</b> Mo-Sa 18:00-24:00<br>     <b>Website:</b> <a href="http://www.cafe-porta.com/" target="_blank">http://www.cafe-porta.com/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_0abd912ef92157a453681948977b8e02.setContent(html_a3010366db353c6d5c266f61b95a2aa5);
+            
+        
+
+        marker_96155e305b26843c72134a0ac50e764f.bindPopup(popup_0abd912ef92157a453681948977b8e02)
+        ;
+
+        
+    
+    
+            var marker_6b00ce1ea4de39bc268cd5dc737c566b = L.marker(
+                [48.2056132, 16.3732901],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_c1d0ac3f2a2049bfed6996584c064200 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_6b00ce1ea4de39bc268cd5dc737c566b.setIcon(icon_c1d0ac3f2a2049bfed6996584c064200);
+        
+    
+        var popup_aa1c082e8db7bb6dfb26936509b9d778 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_67d93875dc91505b9172419485949c36 = $(`<div id="html_67d93875dc91505b9172419485949c36" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Eisgrotte<br>     <b>Street:</b> Himmelpfortgasse<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_aa1c082e8db7bb6dfb26936509b9d778.setContent(html_67d93875dc91505b9172419485949c36);
+            
+        
+
+        marker_6b00ce1ea4de39bc268cd5dc737c566b.bindPopup(popup_aa1c082e8db7bb6dfb26936509b9d778)
+        ;
+
+        
+    
+    
+            var marker_b5ed4995f6192481d21e2fb73e747474 = L.marker(
+                [48.2086051, 16.367211],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_87d8b2b36f8fd88b3734a47c73081b5a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_b5ed4995f6192481d21e2fb73e747474.setIcon(icon_87d8b2b36f8fd88b3734a47c73081b5a);
+        
+    
+        var popup_11d7abdc77e35cd402d7f8a934604c9e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c30a86f4e976472a92b01ca8119a176e = $(`<div id="html_c30a86f4e976472a92b01ca8119a176e" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Demel<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Su 09:00-19:00<br>     <b>Website:</b> <a href="http://www.demel.at/" target="_blank">http://www.demel.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_11d7abdc77e35cd402d7f8a934604c9e.setContent(html_c30a86f4e976472a92b01ca8119a176e);
+            
+        
+
+        marker_b5ed4995f6192481d21e2fb73e747474.bindPopup(popup_11d7abdc77e35cd402d7f8a934604c9e)
+        ;
+
+        
+    
+    
+            var marker_f5caca0e306397280807434c93fd1a88 = L.marker(
+                [48.2121012, 16.3643218],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_cbfa36350c71aace5554b7725f45ba7f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_f5caca0e306397280807434c93fd1a88.setIcon(icon_cbfa36350c71aace5554b7725f45ba7f);
+        
+    
+        var popup_4ef4df8cdea89ac67cd757dac28629f1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_93119e6646320971c0e76b46fce0b2fb = $(`<div id="html_93119e6646320971c0e76b46fce0b2fb" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Splendid bar Italia<br>     <b>Street:</b> Freyung<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_4ef4df8cdea89ac67cd757dac28629f1.setContent(html_93119e6646320971c0e76b46fce0b2fb);
+            
+        
+
+        marker_f5caca0e306397280807434c93fd1a88.bindPopup(popup_4ef4df8cdea89ac67cd757dac28629f1)
+        ;
+
+        
+    
+    
+            var marker_de3722f0ef161532daee57585ecd6f40 = L.marker(
+                [48.2101451, 16.3819599],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_70d4293eb98e3d58cd63f10721493bab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_de3722f0ef161532daee57585ecd6f40.setIcon(icon_70d4293eb98e3d58cd63f10721493bab);
+        
+    
+        var popup_d4419a95bce74614302e7e3a9241d7fd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8c762d2b9d477502587d83edcfcbf411 = $(`<div id="html_8c762d2b9d477502587d83edcfcbf411" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Ministerium<br>     <b>Street:</b> Georg-Coch-Platz<br>     <b>Opening hours:</b> Mo-Fr 07:00-20:00; PH off<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_d4419a95bce74614302e7e3a9241d7fd.setContent(html_8c762d2b9d477502587d83edcfcbf411);
+            
+        
+
+        marker_de3722f0ef161532daee57585ecd6f40.bindPopup(popup_d4419a95bce74614302e7e3a9241d7fd)
+        ;
+
+        
+    
+    
+            var marker_f6142a14b2a377096b26f51b44f6fbe2 = L.marker(
+                [48.2073435, 16.3793791],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_0cc8349f8f8f1ebc4d7e65b4c27cd89d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_f6142a14b2a377096b26f51b44f6fbe2.setIcon(icon_0cc8349f8f8f1ebc4d7e65b4c27cd89d);
+        
+    
+        var popup_74627b27bb6734661852c2441d167e05 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b383d6edeb6d35b4ab00754d7153c230 = $(`<div id="html_b383d6edeb6d35b4ab00754d7153c230" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Perrella<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Su,PH 09:30-20:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_74627b27bb6734661852c2441d167e05.setContent(html_b383d6edeb6d35b4ab00754d7153c230);
+            
+        
+
+        marker_f6142a14b2a377096b26f51b44f6fbe2.bindPopup(popup_74627b27bb6734661852c2441d167e05)
+        ;
+
+        
+    
+    
+            var marker_477e92be2b7c849e01eeb6841a729fdf = L.marker(
+                [48.2012162, 16.3733827],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_6c840dd396de528a5640ade01c36e539 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_477e92be2b7c849e01eeb6841a729fdf.setIcon(icon_6c840dd396de528a5640ade01c36e539);
+        
+    
+        var popup_3da42c0f387819c3fe157f6dabe34513 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_037f75ce49300ac3d86f78cd79b96f46 = $(`<div id="html_037f75ce49300ac3d86f78cd79b96f46" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Imperial Cafe<br>     <b>Street:</b> Kärntner Ring<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_3da42c0f387819c3fe157f6dabe34513.setContent(html_037f75ce49300ac3d86f78cd79b96f46);
+            
+        
+
+        marker_477e92be2b7c849e01eeb6841a729fdf.bindPopup(popup_3da42c0f387819c3fe157f6dabe34513)
+        ;
+
+        
+    
+    
+            var marker_17bdcf0113209297c2e2c7938c81bf19 = L.marker(
+                [48.2116692, 16.3714215],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_902e90f869ed93063411c15c9c2edef3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_17bdcf0113209297c2e2c7938c81bf19.setIcon(icon_902e90f869ed93063411c15c9c2edef3);
+        
+    
+        var popup_f62a8dde0be29938976a53d719bedee4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b8370808ed9095a26faf82e0a3be0065 = $(`<div id="html_b8370808ed9095a26faf82e0a3be0065" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Altes Rathaus<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 11:00-22:00; Sa 12:00-22:00; PH off<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_f62a8dde0be29938976a53d719bedee4.setContent(html_b8370808ed9095a26faf82e0a3be0065);
+            
+        
+
+        marker_17bdcf0113209297c2e2c7938c81bf19.bindPopup(popup_f62a8dde0be29938976a53d719bedee4)
+        ;
+
+        
+    
+    
+            var marker_d73c5b15fe7510fd8c5a390cc1914847 = L.marker(
+                [48.2132141, 16.3635435],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_5881e3c40f5d58b50f38cf4da8ef0b77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d73c5b15fe7510fd8c5a390cc1914847.setIcon(icon_5881e3c40f5d58b50f38cf4da8ef0b77);
+        
+    
+        var popup_72d21fe4fe321a5f87c1304de380701e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4d0035ca9712e889476d9766aaef5554 = $(`<div id="html_4d0035ca9712e889476d9766aaef5554" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Juice factory<br>     <b>Street:</b> Schottengasse<br>     <b>Opening hours:</b> Mo-Fr 07:30-18:00; Sa,Su 08:00-17:00<br>     <b>Website:</b> <a href="https://www.juicefactory.at/" target="_blank">https://www.juicefactory.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_72d21fe4fe321a5f87c1304de380701e.setContent(html_4d0035ca9712e889476d9766aaef5554);
+            
+        
+
+        marker_d73c5b15fe7510fd8c5a390cc1914847.bindPopup(popup_72d21fe4fe321a5f87c1304de380701e)
+        ;
+
+        
+    
+    
+            var marker_8d692cdbd0955329bee99e8cc00bd5e6 = L.marker(
+                [48.2076395, 16.3671072],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_67d341412f560b00e7f9fece6d206dad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_8d692cdbd0955329bee99e8cc00bd5e6.setIcon(icon_67d341412f560b00e7f9fece6d206dad);
+        
+    
+        var popup_d503ca09af46e3eaa5d4e0995a34d91a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8bfece8be1f70ae217d89dce5c31c3cb = $(`<div id="html_8bfece8be1f70ae217d89dce5c31c3cb" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Starbucks<br>     <b>Street:</b> Reitschulgasse<br>     <b>Opening hours:</b> Mo-Fr 08:00-20:00; Sa 08:00-21:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_d503ca09af46e3eaa5d4e0995a34d91a.setContent(html_8bfece8be1f70ae217d89dce5c31c3cb);
+            
+        
+
+        marker_8d692cdbd0955329bee99e8cc00bd5e6.bindPopup(popup_d503ca09af46e3eaa5d4e0995a34d91a)
+        ;
+
+        
+    
+    
+            var marker_25f23d773ac807b9896313ed1b04e1ec = L.marker(
+                [48.2076076, 16.3804174],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_cd8b4bb0869379693a1fc1ee76424ac2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_25f23d773ac807b9896313ed1b04e1ec.setIcon(icon_cd8b4bb0869379693a1fc1ee76424ac2);
+        
+    
+        var popup_7a4508015c01e8837c6d9455fd94103b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a5a4a57794fc27467a94cdabfef9a333 = $(`<div id="html_a5a4a57794fc27467a94cdabfef9a333" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Prückel<br>     <b>Street:</b> Stubenring<br>     <b>Opening hours:</b> Mo-Su 08:30-22:00<br>     <b>Website:</b> <a href="https://www.prueckel.at" target="_blank">https://www.prueckel.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_7a4508015c01e8837c6d9455fd94103b.setContent(html_a5a4a57794fc27467a94cdabfef9a333);
+            
+        
+
+        marker_25f23d773ac807b9896313ed1b04e1ec.bindPopup(popup_7a4508015c01e8837c6d9455fd94103b)
+        ;
+
+        
+    
+    
+            var marker_95376c9cb8d67a5a62942a844698e65e = L.marker(
+                [48.2105666, 16.3822315],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_b21e04fca9ef838f07d0d798d4cfe099 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_95376c9cb8d67a5a62942a844698e65e.setIcon(icon_b21e04fca9ef838f07d0d798d4cfe099);
+        
+    
+        var popup_c674d5c33109cd10363541f5cffcf634 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9ba4b85462e67b9e611408373282c73f = $(`<div id="html_9ba4b85462e67b9e611408373282c73f" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> No information<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_c674d5c33109cd10363541f5cffcf634.setContent(html_9ba4b85462e67b9e611408373282c73f);
+            
+        
+
+        marker_95376c9cb8d67a5a62942a844698e65e.bindPopup(popup_c674d5c33109cd10363541f5cffcf634)
+        ;
+
+        
+    
+    
+            var marker_b4dc815777bfaa1af756c0b867c3c33f = L.marker(
+                [48.2131905, 16.3628381],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_d742b9556ab94fa59b1620d400d84cdf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_b4dc815777bfaa1af756c0b867c3c33f.setIcon(icon_d742b9556ab94fa59b1620d400d84cdf);
+        
+    
+        var popup_31985e4b644762be42955a8c031023b6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_15c3f3c18c41bc7f3ecba40f0f11d4ee = $(`<div id="html_15c3f3c18c41bc7f3ecba40f0f11d4ee" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Starbucks<br>     <b>Street:</b> Schottengasse<br>     <b>Opening hours:</b> Mo-Fr 06:30-21:00; Sa 08:00-19:00; Su 09:00-19:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_31985e4b644762be42955a8c031023b6.setContent(html_15c3f3c18c41bc7f3ecba40f0f11d4ee);
+            
+        
+
+        marker_b4dc815777bfaa1af756c0b867c3c33f.bindPopup(popup_31985e4b644762be42955a8c031023b6)
+        ;
+
+        
+    
+    
+            var marker_a5ddc1310a52ee535d48e26a51ae16e8 = L.marker(
+                [48.206269, 16.3733485],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_287b239d75b43d49e4705565909512c4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a5ddc1310a52ee535d48e26a51ae16e8.setIcon(icon_287b239d75b43d49e4705565909512c4);
+        
+    
+        var popup_ae58151a5f896d6401fa4b56642229ec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5a39362864a5b5833d0df663b6006982 = $(`<div id="html_5a39362864a5b5833d0df663b6006982" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafe Neko<br>     <b>Street:</b> Blumenstockgasse<br>     <b>Opening hours:</b> Mo-Su 10:00-20:00<br>     <b>Website:</b> <a href="http://cafeneko.at" target="_blank">http://cafeneko.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_ae58151a5f896d6401fa4b56642229ec.setContent(html_5a39362864a5b5833d0df663b6006982);
+            
+        
+
+        marker_a5ddc1310a52ee535d48e26a51ae16e8.bindPopup(popup_ae58151a5f896d6401fa4b56642229ec)
+        ;
+
+        
+    
+    
+            var marker_405f208fee095d46c23f1a0a637cac13 = L.marker(
+                [48.2093993, 16.3770325],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_f0e8b297e3ae0307bf0372e23d8c1c01 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_405f208fee095d46c23f1a0a637cac13.setIcon(icon_f0e8b297e3ae0307bf0372e23d8c1c01);
+        
+    
+        var popup_904b1020270c588116ec92df77b1679b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ebad3b2c552bb9ede00d38f6f3a16b24 = $(`<div id="html_ebad3b2c552bb9ede00d38f6f3a16b24" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Lukas<br>     <b>Street:</b> Schönlaterngasse<br>     <b>Opening hours:</b> 17:00-04:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_904b1020270c588116ec92df77b1679b.setContent(html_ebad3b2c552bb9ede00d38f6f3a16b24);
+            
+        
+
+        marker_405f208fee095d46c23f1a0a637cac13.bindPopup(popup_904b1020270c588116ec92df77b1679b)
+        ;
+
+        
+    
+    
+            var marker_8416830515aa6cfe4678b3c35f4ad6d6 = L.marker(
+                [48.2082709, 16.3711269],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_94852258b8b14c32783050465c974505 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_8416830515aa6cfe4678b3c35f4ad6d6.setIcon(icon_94852258b8b14c32783050465c974505);
+        
+    
+        var popup_0ca3dae0ebd80f993beddbb3562b2907 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a763c25778afc4bed32dbfd6133e522e = $(`<div id="html_a763c25778afc4bed32dbfd6133e522e" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café de l'Europe<br>     <b>Street:</b> Graben<br>     <b>Opening hours:</b> Mo-Fr 07:00-24:00; Sa 07:30-24:00; PH,Su 08:00-24:00<br>     <b>Website:</b> <a href="https://www.castelletto.at" target="_blank">https://www.castelletto.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_0ca3dae0ebd80f993beddbb3562b2907.setContent(html_a763c25778afc4bed32dbfd6133e522e);
+            
+        
+
+        marker_8416830515aa6cfe4678b3c35f4ad6d6.bindPopup(popup_0ca3dae0ebd80f993beddbb3562b2907)
+        ;
+
+        
+    
+    
+            var marker_1a18f1b869aaab96879e79c778ae87ef = L.marker(
+                [48.2033237, 16.363967],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_ac7d67c7c549615e6f8ea8178e4d7077 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_1a18f1b869aaab96879e79c778ae87ef.setIcon(icon_ac7d67c7c549615e6f8ea8178e4d7077);
+        
+    
+        var popup_9c1d7a6c168bc6c00fac7c1c8e5ac78a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0cbfc36faa28f9767b40818b18c15266 = $(`<div id="html_0cbfc36faa28f9767b40818b18c15266" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> burg.ring1<br>     <b>Street:</b> Burgring<br>     <b>Opening hours:</b> Mo-We 11:00-22:00; Th-Sa 11:00-24:00; Su off; PH unknown<br>     <b>Website:</b> <a href="https://burgring.at/" target="_blank">https://burgring.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_9c1d7a6c168bc6c00fac7c1c8e5ac78a.setContent(html_0cbfc36faa28f9767b40818b18c15266);
+            
+        
+
+        marker_1a18f1b869aaab96879e79c778ae87ef.bindPopup(popup_9c1d7a6c168bc6c00fac7c1c8e5ac78a)
+        ;
+
+        
+    
+    
+            var marker_a47e4006efa2dabfd9636f51dbde9b6e = L.marker(
+                [48.2015868, 16.3654484],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_1f26c9fffb2010b31e680b381caf77f6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a47e4006efa2dabfd9636f51dbde9b6e.setIcon(icon_1f26c9fffb2010b31e680b381caf77f6);
+        
+    
+        var popup_1e95e25e709dc1ca52af60bd462d9959 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b2e271a4b5cff0717adf70b1e190ab10 = $(`<div id="html_b2e271a4b5cff0717adf70b1e190ab10" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafeteria der Akademie der bildenden Künste Wien<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 08:30-16:00<br>     <b>Website:</b> <a href="https://www.akbild.ac.at/Portal/organisation/services/mensa" target="_blank">https://www.akbild.ac.at/Portal/organisation/services/mensa</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_1e95e25e709dc1ca52af60bd462d9959.setContent(html_b2e271a4b5cff0717adf70b1e190ab10);
+            
+        
+
+        marker_a47e4006efa2dabfd9636f51dbde9b6e.bindPopup(popup_1e95e25e709dc1ca52af60bd462d9959)
+        ;
+
+        
+    
+    
+            var marker_a4beca088bc527d08a51f71da19c969d = L.marker(
+                [48.2029945, 16.378521],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_2c65762e3cf995e373f6abf666260825 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a4beca088bc527d08a51f71da19c969d.setIcon(icon_2c65762e3cf995e373f6abf666260825);
+        
+    
+        var popup_7dae8bcc6b8483993c1e8328f0c7b516 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e27de94ee3fbfea81ad80171aa406afa = $(`<div id="html_e27de94ee3fbfea81ad80171aa406afa" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Kleinod Stadtgarten<br>     <b>Street:</b> Johannesgasse<br>     <b>Opening hours:</b> Apr-Sep<br>     <b>Website:</b> <a href="https://www.kleinod-stadtgarten.wien" target="_blank">https://www.kleinod-stadtgarten.wien</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_7dae8bcc6b8483993c1e8328f0c7b516.setContent(html_e27de94ee3fbfea81ad80171aa406afa);
+            
+        
+
+        marker_a4beca088bc527d08a51f71da19c969d.bindPopup(popup_7dae8bcc6b8483993c1e8328f0c7b516)
+        ;
+
+        
+    
+    
+            var marker_53d6c613881ccba81b35c0f643c8597b = L.marker(
+                [48.2120844, 16.3778369],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_29c3a72af06b7bfacd6ce0745b7d586e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_53d6c613881ccba81b35c0f643c8597b.setIcon(icon_29c3a72af06b7bfacd6ce0745b7d586e);
+        
+    
+        var popup_fa4407ad9b1fbf083f547a0860c132b9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c599408be110e34dd85852b6185cd67c = $(`<div id="html_c599408be110e34dd85852b6185cd67c" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Motto am Fluss<br>     <b>Street:</b> Franz-Josefs-Kai<br>     <b>Opening hours:</b> Mo-Su 08:00-00:00<br>     <b>Website:</b> <a href="http://www.mottoamfluss.at" target="_blank">http://www.mottoamfluss.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_fa4407ad9b1fbf083f547a0860c132b9.setContent(html_c599408be110e34dd85852b6185cd67c);
+            
+        
+
+        marker_53d6c613881ccba81b35c0f643c8597b.bindPopup(popup_fa4407ad9b1fbf083f547a0860c132b9)
+        ;
+
+        
+    
+    
+            var marker_cd63f3f35360d11e1eef144ea478c442 = L.marker(
+                [48.2031951, 16.3703148],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_b88ff9a4c92a7d2ac8f2d453bcf183ba = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_cd63f3f35360d11e1eef144ea478c442.setIcon(icon_b88ff9a4c92a7d2ac8f2d453bcf183ba);
+        
+    
+        var popup_5f7faeed3decdf043f560ff6e4cf0fa6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6e0bd7f6a0e3f113ffc8f05fdb3d1910 = $(`<div id="html_6e0bd7f6a0e3f113ffc8f05fdb3d1910" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> K. u. K. Hoflieferanten - Gerstner & Schlumberger<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Su 10:00-23:00<br>     <b>Website:</b> <a href="http://www.kuk-hoflieferanten.at/" target="_blank">http://www.kuk-hoflieferanten.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_5f7faeed3decdf043f560ff6e4cf0fa6.setContent(html_6e0bd7f6a0e3f113ffc8f05fdb3d1910);
+            
+        
+
+        marker_cd63f3f35360d11e1eef144ea478c442.bindPopup(popup_5f7faeed3decdf043f560ff6e4cf0fa6)
+        ;
+
+        
+    
+    
+            var marker_7703a7d8182377188264f96defabd6f4 = L.marker(
+                [48.2148113, 16.371967],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_9bff7554484536e61d63b7cc22450ba3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_7703a7d8182377188264f96defabd6f4.setIcon(icon_9bff7554484536e61d63b7cc22450ba3);
+        
+    
+        var popup_2c0db5f7237ca8536158ba80a8557868 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_34139738aa112e3593a2c10aa4c86cbb = $(`<div id="html_34139738aa112e3593a2c10aa4c86cbb" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Steirer Platzl<br>     <b>Street:</b> Rudolfsplatz<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_2c0db5f7237ca8536158ba80a8557868.setContent(html_34139738aa112e3593a2c10aa4c86cbb);
+            
+        
+
+        marker_7703a7d8182377188264f96defabd6f4.bindPopup(popup_2c0db5f7237ca8536158ba80a8557868)
+        ;
+
+        
+    
+    
+            var marker_8e8e1d27c7f18934e3d906beca88abc1 = L.marker(
+                [48.2133874, 16.3691222],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_fb809a5622a2599269cb76b2060c0c4f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_8e8e1d27c7f18934e3d906beca88abc1.setIcon(icon_fb809a5622a2599269cb76b2060c0c4f);
+        
+    
+        var popup_ca2f6c693d527ee021f8cfcd2b42dba2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a92c35f02ed1c4e11fd28747f9f433f5 = $(`<div id="html_a92c35f02ed1c4e11fd28747f9f433f5" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Alexander<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_ca2f6c693d527ee021f8cfcd2b42dba2.setContent(html_a92c35f02ed1c4e11fd28747f9f433f5);
+            
+        
+
+        marker_8e8e1d27c7f18934e3d906beca88abc1.bindPopup(popup_ca2f6c693d527ee021f8cfcd2b42dba2)
+        ;
+
+        
+    
+    
+            var marker_7d1fe29959e5c5d9551d5d2ce04e96e3 = L.marker(
+                [48.2090335, 16.3732591],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_2b3ef3d9a342e92f1ef646fcdbbd3348 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_7d1fe29959e5c5d9551d5d2ce04e96e3.setIcon(icon_2b3ef3d9a342e92f1ef646fcdbbd3348);
+        
+    
+        var popup_6d81e2491755264282847d6d5ad8a1d3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b558ff0c84f2e5c5af934f3eb6b5e33f = $(`<div id="html_b558ff0c84f2e5c5af934f3eb6b5e33f" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> XCelsior Caffè-Bar<br>     <b>Street:</b> Stephansplatz<br>     <b>Opening hours:</b> Su-Th 08:30-20:00; Fr,Sa 08:30-21:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_6d81e2491755264282847d6d5ad8a1d3.setContent(html_b558ff0c84f2e5c5af934f3eb6b5e33f);
+            
+        
+
+        marker_7d1fe29959e5c5d9551d5d2ce04e96e3.bindPopup(popup_6d81e2491755264282847d6d5ad8a1d3)
+        ;
+
+        
+    
+    
+            var marker_f97340c6d541ad933757b87de2f05cb3 = L.marker(
+                [48.2027375, 16.3634874],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_5350d2511812eb31c73d31c9b5c61d41 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_f97340c6d541ad933757b87de2f05cb3.setIcon(icon_5350d2511812eb31c73d31c9b5c61d41);
+        
+    
+        var popup_201aac3f0295f65f4e4bbaca9d445cb6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fbbcff66703a1465e2e5649baa3e2562 = $(`<div id="html_fbbcff66703a1465e2e5649baa3e2562" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> café camus<br>     <b>Street:</b> Eschenbachgasse<br>     <b>Opening hours:</b> Mo-Sa 16:00-02:00; Su 10:00-24:00<br>     <b>Website:</b> <a href="https://cafecamus.at/" target="_blank">https://cafecamus.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_201aac3f0295f65f4e4bbaca9d445cb6.setContent(html_fbbcff66703a1465e2e5649baa3e2562);
+            
+        
+
+        marker_f97340c6d541ad933757b87de2f05cb3.bindPopup(popup_201aac3f0295f65f4e4bbaca9d445cb6)
+        ;
+
+        
+    
+    
+            var marker_c8004ab3dacd41c77de14b31690ec4db = L.marker(
+                [48.2017865, 16.3696377],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_3dddae2249321d1d06597cdc62748a14 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_c8004ab3dacd41c77de14b31690ec4db.setIcon(icon_3dddae2249321d1d06597cdc62748a14);
+        
+    
+        var popup_ca6f49f2aed4ae37a619ee6fea981e68 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0a05ea93cfee00eda9db157223dcaf5c = $(`<div id="html_0a05ea93cfee00eda9db157223dcaf5c" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafe Bistro 59<br>     <b>Street:</b> Kärntner Straße<br>     <b>Opening hours:</b> Mo-Fr 07:00-24:00; Sa,Su,PH 11:00-24:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_ca6f49f2aed4ae37a619ee6fea981e68.setContent(html_0a05ea93cfee00eda9db157223dcaf5c);
+            
+        
+
+        marker_c8004ab3dacd41c77de14b31690ec4db.bindPopup(popup_ca6f49f2aed4ae37a619ee6fea981e68)
+        ;
+
+        
+    
+    
+            var marker_ca15ede98d5ad4f9c828ba4779a347bf = L.marker(
+                [48.2007985, 16.3702841],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_c557ba71654b4809a0bda47487c7a100 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_ca15ede98d5ad4f9c828ba4779a347bf.setIcon(icon_c557ba71654b4809a0bda47487c7a100);
+        
+    
+        var popup_3250064296b183fe15a8e54cca35331d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d9cfe4b40687cd5433a9934373c9a0f3 = $(`<div id="html_d9cfe4b40687cd5433a9934373c9a0f3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Charlyfresh<br>     <b>Street:</b> Karlsplatz<br>     <b>Opening hours:</b> Mo-Fr 08:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_3250064296b183fe15a8e54cca35331d.setContent(html_d9cfe4b40687cd5433a9934373c9a0f3);
+            
+        
+
+        marker_ca15ede98d5ad4f9c828ba4779a347bf.bindPopup(popup_3250064296b183fe15a8e54cca35331d)
+        ;
+
+        
+    
+    
+            var marker_147a42e19086fb1063bda8d70a00c861 = L.marker(
+                [48.2105771, 16.3769277],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_b6083b7be93253b207eecfece4ed7b0c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_147a42e19086fb1063bda8d70a00c861.setIcon(icon_b6083b7be93253b207eecfece4ed7b0c);
+        
+    
+        var popup_84e9d8c794f7f5426d4f882fe89f8393 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2904f2aea6e2eafadd5d6ad914a101a2 = $(`<div id="html_2904f2aea6e2eafadd5d6ad914a101a2" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Diglas<br>     <b>Street:</b> Fleischmarkt<br>     <b>Opening hours:</b> Mo-Fr 08:00-19:00; Sa 09:00-19:00; Su 10:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_84e9d8c794f7f5426d4f882fe89f8393.setContent(html_2904f2aea6e2eafadd5d6ad914a101a2);
+            
+        
+
+        marker_147a42e19086fb1063bda8d70a00c861.bindPopup(popup_84e9d8c794f7f5426d4f882fe89f8393)
+        ;
+
+        
+    
+    
+            var marker_081667abe01f21f47f5bed3b265e5ede = L.marker(
+                [48.2105647, 16.3778823],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_01b857f346b2a8a93e294cc5483e21af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_081667abe01f21f47f5bed3b265e5ede.setIcon(icon_01b857f346b2a8a93e294cc5483e21af);
+        
+    
+        var popup_d584383f2812ccc95d2058f73f7e0282 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1207139bbb7fb95c33d04f3525d4db2a = $(`<div id="html_1207139bbb7fb95c33d04f3525d4db2a" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Blütezeit<br>     <b>Street:</b> Laurenzerberg<br>     <b>Opening hours:</b> Mo,Tu 08:30-16:00; We-Fr 08:30-20:00; Sa 08:30-15:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_d584383f2812ccc95d2058f73f7e0282.setContent(html_1207139bbb7fb95c33d04f3525d4db2a);
+            
+        
+
+        marker_081667abe01f21f47f5bed3b265e5ede.bindPopup(popup_d584383f2812ccc95d2058f73f7e0282)
+        ;
+
+        
+    
+    
+            var marker_19206051d3ccd9944ba91027401daecb = L.marker(
+                [48.2111456, 16.3728542],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_bce9e3aa488bf6f0ca848aab0fb5aa67 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_19206051d3ccd9944ba91027401daecb.setIcon(icon_bce9e3aa488bf6f0ca848aab0fb5aa67);
+        
+    
+        var popup_44bdce33347242bf24600ba508d35256 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_88b1b6cf9f318d3ca5bd9d77041668a1 = $(`<div id="html_88b1b6cf9f318d3ca5bd9d77041668a1" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Caffe a casa<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 07:30-18:30; Sa 09:00-18:00; Su 10:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_44bdce33347242bf24600ba508d35256.setContent(html_88b1b6cf9f318d3ca5bd9d77041668a1);
+            
+        
+
+        marker_19206051d3ccd9944ba91027401daecb.bindPopup(popup_44bdce33347242bf24600ba508d35256)
+        ;
+
+        
+    
+    
+            var marker_b1d82caabcee23dda27dac38a5be3b8d = L.marker(
+                [48.2066752, 16.3576169],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_dfa4df568a0af8b7d31c6e46a0dc63a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_b1d82caabcee23dda27dac38a5be3b8d.setIcon(icon_dfa4df568a0af8b7d31c6e46a0dc63a1);
+        
+    
+        var popup_bdf2cdfa30ec07c7157b21a16a166a8c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c4e2c89cc06b014749d5d5867f44cd30 = $(`<div id="html_c4e2c89cc06b014749d5d5867f44cd30" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Justizcafe<br>     <b>Street:</b> Schmerlingplatz<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> <a href="https://www.justizcafe.at/" target="_blank">https://www.justizcafe.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_bdf2cdfa30ec07c7157b21a16a166a8c.setContent(html_c4e2c89cc06b014749d5d5867f44cd30);
+            
+        
+
+        marker_b1d82caabcee23dda27dac38a5be3b8d.bindPopup(popup_bdf2cdfa30ec07c7157b21a16a166a8c)
+        ;
+
+        
+    
+    
+            var marker_9eb9ef0fc09bc79b558419f10018b38b = L.marker(
+                [48.2060369, 16.359135],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_d6a85a0f0f0bafca9d9ce4eb1b19ac96 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_9eb9ef0fc09bc79b558419f10018b38b.setIcon(icon_d6a85a0f0f0bafca9d9ce4eb1b19ac96);
+        
+    
+        var popup_bd04a8b34e9686f050c1f24013d244f7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cdd7e8db89228d7f46f5bdfb725f192c = $(`<div id="html_cdd7e8db89228d7f46f5bdfb725f192c" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Bellaria<br>     <b>Street:</b> Bellariastraße<br>     <b>Opening hours:</b> Mo-Fr 07:30-24:00, Sa 10:00-24:00, Su 11:00-21:00<br>     <b>Website:</b> <a href="https://www.cafebellaria.at/" target="_blank">https://www.cafebellaria.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_bd04a8b34e9686f050c1f24013d244f7.setContent(html_cdd7e8db89228d7f46f5bdfb725f192c);
+            
+        
+
+        marker_9eb9ef0fc09bc79b558419f10018b38b.bindPopup(popup_bd04a8b34e9686f050c1f24013d244f7)
+        ;
+
+        
+    
+    
+            var marker_5d3afa905392f78a043034bd501d955d = L.marker(
+                [48.20945, 16.368359],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_618108833ffddb378a95613673f5d0ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_5d3afa905392f78a043034bd501d955d.setIcon(icon_618108833ffddb378a95613673f5d0ee);
+        
+    
+        var popup_613ad36aeb3940cf9393f94d5ec6b73d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_51a12467087854b032d59de5395a7fc3 = $(`<div id="html_51a12467087854b032d59de5395a7fc3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Julius Meinl<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 08:00-19:30; Sa 09:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_613ad36aeb3940cf9393f94d5ec6b73d.setContent(html_51a12467087854b032d59de5395a7fc3);
+            
+        
+
+        marker_5d3afa905392f78a043034bd501d955d.bindPopup(popup_613ad36aeb3940cf9393f94d5ec6b73d)
+        ;
+
+        
+    
+    
+            var marker_6e557d9bcb54155bc9f555ae9af232a4 = L.marker(
+                [48.2139371, 16.3589634],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_03fa11028a3b23e40e3feb3d23559d56 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_6e557d9bcb54155bc9f555ae9af232a4.setIcon(icon_03fa11028a3b23e40e3feb3d23559d56);
+        
+    
+        var popup_a87aef2166c3ad6738d1ec3e9148768e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_096004322fc095eafa0732e9682f796e = $(`<div id="html_096004322fc095eafa0732e9682f796e" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Votiv<br>     <b>Street:</b> Reichsratsstraße<br>     <b>Opening hours:</b> Mo-Fr 08:00-24:00; Sa 09:00-24:00; Su,PH 09:00-23:00<br>     <b>Website:</b> <a href="https://cafe-votiv.at/" target="_blank">https://cafe-votiv.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_a87aef2166c3ad6738d1ec3e9148768e.setContent(html_096004322fc095eafa0732e9682f796e);
+            
+        
+
+        marker_6e557d9bcb54155bc9f555ae9af232a4.bindPopup(popup_a87aef2166c3ad6738d1ec3e9148768e)
+        ;
+
+        
+    
+    
+            var marker_e2279c41c06bccb78a90d723269ff9b7 = L.marker(
+                [48.2071916, 16.3693635],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_2c44ef31a3548d0f28065e3b0373c335 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_e2279c41c06bccb78a90d723269ff9b7.setIcon(icon_2c44ef31a3548d0f28065e3b0373c335);
+        
+    
+        var popup_bb1332e1f33b05e64dc54a5436e602b9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3e5f0e5b8ee93516f15e39e16355fe60 = $(`<div id="html_3e5f0e5b8ee93516f15e39e16355fe60" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Taim Café Dorotheergasse<br>     <b>Street:</b> Dorotheergasse<br>     <b>Opening hours:</b> Mo-Fr, Su 10:00-18:00<br>     <b>Website:</b> <a href="https://www.taim.at/" target="_blank">https://www.taim.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_bb1332e1f33b05e64dc54a5436e602b9.setContent(html_3e5f0e5b8ee93516f15e39e16355fe60);
+            
+        
+
+        marker_e2279c41c06bccb78a90d723269ff9b7.bindPopup(popup_bb1332e1f33b05e64dc54a5436e602b9)
+        ;
+
+        
+    
+    
+            var marker_8850439458d329ce0cebe6d921ed5d33 = L.marker(
+                [48.2112236, 16.3700337],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_9d1b8a65c84e97ef7910f85205e8abeb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_8850439458d329ce0cebe6d921ed5d33.setIcon(icon_9d1b8a65c84e97ef7910f85205e8abeb);
+        
+    
+        var popup_b27ec5d10121a7a7bb9351d319267ffb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_44841d5e41ab3067e56e613baa3af203 = $(`<div id="html_44841d5e41ab3067e56e613baa3af203" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Delyrium café<br>     <b>Street:</b> Kurrentgasse<br>     <b>Opening hours:</b> Mo-Sa 11:00-23:00; Su 10:00-23:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_b27ec5d10121a7a7bb9351d319267ffb.setContent(html_44841d5e41ab3067e56e613baa3af203);
+            
+        
+
+        marker_8850439458d329ce0cebe6d921ed5d33.bindPopup(popup_b27ec5d10121a7a7bb9351d319267ffb)
+        ;
+
+        
+    
+    
+            var marker_dd3e7105c353dd89672a8459aecebbaa = L.marker(
+                [48.203939, 16.3696603],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_3e5413e7d81da2e9e4f07545bd6ea385 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_dd3e7105c353dd89672a8459aecebbaa.setIcon(icon_3e5413e7d81da2e9e4f07545bd6ea385);
+        
+    
+        var popup_d3647597161dd97588768a15dd2e4516 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bc65d2b82e567ffdee2336d07b01c119 = $(`<div id="html_bc65d2b82e567ffdee2336d07b01c119" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Sacher Wien<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Su,PH 08:00-22:00<br>     <b>Website:</b> <a href="https://www.sacher.com/hotel-wien-2/kulinarik/cafe-sacher-wien/" target="_blank">https://www.sacher.com/hotel-wien-2/kulinarik/cafe-sacher-wien/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_d3647597161dd97588768a15dd2e4516.setContent(html_bc65d2b82e567ffdee2336d07b01c119);
+            
+        
+
+        marker_dd3e7105c353dd89672a8459aecebbaa.bindPopup(popup_d3647597161dd97588768a15dd2e4516)
+        ;
+
+        
+    
+    
+            var marker_d9685471c159682fcd931280eb10ae7a = L.marker(
+                [48.2077926, 16.3805744],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_a76f5eaff9b651248e32a10949c6d343 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d9685471c159682fcd931280eb10ae7a.setIcon(icon_a76f5eaff9b651248e32a10949c6d343);
+        
+    
+        var popup_51273c99d18da31e73ed1e397afedf20 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ec7765151c865f89a15fe684ea539621 = $(`<div id="html_ec7765151c865f89a15fe684ea539621" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cafe Milan<br>     <b>Street:</b> Stubenring<br>     <b>Opening hours:</b> Mo-Fr 08:00-01:00; Sa, Su 10:00-01:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_51273c99d18da31e73ed1e397afedf20.setContent(html_ec7765151c865f89a15fe684ea539621);
+            
+        
+
+        marker_d9685471c159682fcd931280eb10ae7a.bindPopup(popup_51273c99d18da31e73ed1e397afedf20)
+        ;
+
+        
+    
+    
+            var marker_6995aef70daff850affe49dfa10b2a86 = L.marker(
+                [48.2086434, 16.3701757],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_0325325908b6fb13a6b5e49220d0b95a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_6995aef70daff850affe49dfa10b2a86.setIcon(icon_0325325908b6fb13a6b5e49220d0b95a);
+        
+    
+        var popup_8cb88fecd2077f48fdf7263418ee3182 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e0a86117fe469077fd4c32d9963b491f = $(`<div id="html_e0a86117fe469077fd4c32d9963b491f" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Segafredo am Graben<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_8cb88fecd2077f48fdf7263418ee3182.setContent(html_e0a86117fe469077fd4c32d9963b491f);
+            
+        
+
+        marker_6995aef70daff850affe49dfa10b2a86.bindPopup(popup_8cb88fecd2077f48fdf7263418ee3182)
+        ;
+
+        
+    
+    
+            var marker_ea051b6372e16e90f406120ccff842bd = L.marker(
+                [48.2021978, 16.3689606],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_f212f2a70b7bd859c76a08f4f38716d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_ea051b6372e16e90f406120ccff842bd.setIcon(icon_f212f2a70b7bd859c76a08f4f38716d6);
+        
+    
+        var popup_49ff00348585e0e1186e88aed92f36e1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cc37f497e4dd0378878de1b9fef95d42 = $(`<div id="html_cc37f497e4dd0378878de1b9fef95d42" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> L'Opera<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_49ff00348585e0e1186e88aed92f36e1.setContent(html_cc37f497e4dd0378878de1b9fef95d42);
+            
+        
+
+        marker_ea051b6372e16e90f406120ccff842bd.bindPopup(popup_49ff00348585e0e1186e88aed92f36e1)
+        ;
+
+        
+    
+    
+            var marker_d16538e74ae214e6104c6df42d4076d5 = L.marker(
+                [48.2056494, 16.3576918],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_c92c1ebe78be235491c785648dc06c45 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d16538e74ae214e6104c6df42d4076d5.setIcon(icon_c92c1ebe78be235491c785648dc06c45);
+        
+    
+        var popup_2a6368dd1f4602edfb08c8aa3be8803c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_baab828856ba1119fda97a4ee9eb64ca = $(`<div id="html_baab828856ba1119fda97a4ee9eb64ca" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Raimund<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 08:00-20:00; Sa-Su 09:00-20:00<br>     <b>Website:</b> <a href="https://www.cafe-raimund.com/" target="_blank">https://www.cafe-raimund.com/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_2a6368dd1f4602edfb08c8aa3be8803c.setContent(html_baab828856ba1119fda97a4ee9eb64ca);
+            
+        
+
+        marker_d16538e74ae214e6104c6df42d4076d5.bindPopup(popup_2a6368dd1f4602edfb08c8aa3be8803c)
+        ;
+
+        
+    
+    
+            var marker_40f504e1399020a2dcc47eb05a2ed97b = L.marker(
+                [48.207884, 16.3697228],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_71a8c5f0af572fab04b9ebf08110a842 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_40f504e1399020a2dcc47eb05a2ed97b.setIcon(icon_71a8c5f0af572fab04b9ebf08110a842);
+        
+    
+        var popup_b838c0d221f6b29306cd38d9b089d4b0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a309e263eed8d734e5235059b77b5e5a = $(`<div id="html_a309e263eed8d734e5235059b77b5e5a" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Köö Cafe<br>     <b>Street:</b> Dorotheergasse<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> <a href="http://www.billardcafe.at/lokale/1010-dorotheergasse.html" target="_blank">http://www.billardcafe.at/lokale/1010-dorotheergasse.html</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_b838c0d221f6b29306cd38d9b089d4b0.setContent(html_a309e263eed8d734e5235059b77b5e5a);
+            
+        
+
+        marker_40f504e1399020a2dcc47eb05a2ed97b.bindPopup(popup_b838c0d221f6b29306cd38d9b089d4b0)
+        ;
+
+        
+    
+    
+            var marker_47af34f68e0d0aadda90aaf9eba016a9 = L.marker(
+                [48.2128645, 16.3680634],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_7317c4d12d24e4670beff6e910be0b83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_47af34f68e0d0aadda90aaf9eba016a9.setIcon(icon_7317c4d12d24e4670beff6e910be0b83);
+        
+    
+        var popup_37367fa5cd8d3dd3849270b195bb03a8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_09b8de4d949cfb9dda4d03367635f8c9 = $(`<div id="html_09b8de4d949cfb9dda4d03367635f8c9" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Naber Kaffee<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 08:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_37367fa5cd8d3dd3849270b195bb03a8.setContent(html_09b8de4d949cfb9dda4d03367635f8c9);
+            
+        
+
+        marker_47af34f68e0d0aadda90aaf9eba016a9.bindPopup(popup_37367fa5cd8d3dd3849270b195bb03a8)
+        ;
+
+        
+    
+    
+            var marker_689187c8e7b2fb3d8fd7e1c40fc3241d = L.marker(
+                [48.2144969, 16.3730735],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_dab84f13c76291ccce4feca16f3906be = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_689187c8e7b2fb3d8fd7e1c40fc3241d.setIcon(icon_dab84f13c76291ccce4feca16f3906be);
+        
+    
+        var popup_74c6b67d17fb8c80082253a39f8d4adb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_818b69fa47dc42c32580bb1046f92799 = $(`<div id="html_818b69fa47dc42c32580bb1046f92799" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Wilheim<br>     <b>Street:</b> Franz-Josefs-Kai<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_74c6b67d17fb8c80082253a39f8d4adb.setContent(html_818b69fa47dc42c32580bb1046f92799);
+            
+        
+
+        marker_689187c8e7b2fb3d8fd7e1c40fc3241d.bindPopup(popup_74c6b67d17fb8c80082253a39f8d4adb)
+        ;
+
+        
+    
+    
+            var marker_8e364acd74bcb5442e68812cc5b0fdfa = L.marker(
+                [48.2129706, 16.3721693],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_b1c4db5312680cd1c6153b2ad50f3e7c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_8e364acd74bcb5442e68812cc5b0fdfa.setIcon(icon_b1c4db5312680cd1c6153b2ad50f3e7c);
+        
+    
+        var popup_28b682ef82911a1903778abbba135181 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_279dee597b47ddf22ac8ea2037e942e8 = $(`<div id="html_279dee597b47ddf22ac8ea2037e942e8" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Dolce Pensiero<br>     <b>Street:</b> Salzgries<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> <a href="https://dolcepensiero.at/" target="_blank">https://dolcepensiero.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_28b682ef82911a1903778abbba135181.setContent(html_279dee597b47ddf22ac8ea2037e942e8);
+            
+        
+
+        marker_8e364acd74bcb5442e68812cc5b0fdfa.bindPopup(popup_28b682ef82911a1903778abbba135181)
+        ;
+
+        
+    
+    
+            var marker_0953d6600f0dbfe6ff60ab2c205635eb = L.marker(
+                [48.2147023, 16.369927],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_2e09ea6d6db94ca84a9dda360b52762b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_0953d6600f0dbfe6ff60ab2c205635eb.setIcon(icon_2e09ea6d6db94ca84a9dda360b52762b);
+        
+    
+        var popup_ad486600c77ac4a3529642556d161995 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d3572e685d81354c5d8b1323017aaae7 = $(`<div id="html_d3572e685d81354c5d8b1323017aaae7" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Giovanni<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 07:00-17:30; Sa 09:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_ad486600c77ac4a3529642556d161995.setContent(html_d3572e685d81354c5d8b1323017aaae7);
+            
+        
+
+        marker_0953d6600f0dbfe6ff60ab2c205635eb.bindPopup(popup_ad486600c77ac4a3529642556d161995)
+        ;
+
+        
+    
+    
+            var marker_bffbd6c8f589a43ea935041e4d0bcf46 = L.marker(
+                [48.2053042, 16.3706748],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_84aa06e06de3685ff0846b76553eebe7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_bffbd6c8f589a43ea935041e4d0bcf46.setIcon(icon_84aa06e06de3685ff0846b76553eebe7);
+        
+    
+        var popup_762d56215179c15eb258667b27f06d6e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_309c29220a4973c546aa10933b34978b = $(`<div id="html_309c29220a4973c546aa10933b34978b" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Roberto<br>     <b>Street:</b> Marco-d'Aviano-Gasse<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> <a href="https://www.juicefactory.at/" target="_blank">https://www.juicefactory.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_762d56215179c15eb258667b27f06d6e.setContent(html_309c29220a4973c546aa10933b34978b);
+            
+        
+
+        marker_bffbd6c8f589a43ea935041e4d0bcf46.bindPopup(popup_762d56215179c15eb258667b27f06d6e)
+        ;
+
+        
+    
+    
+            var marker_e65a8e9692c1ae16743eabb0e2564520 = L.marker(
+                [48.2086286, 16.3712663],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_51567001bb30654b0434e7c21d4497a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_e65a8e9692c1ae16743eabb0e2564520.setIcon(icon_51567001bb30654b0434e7c21d4497a4);
+        
+    
+        var popup_8ce1a2efff11780f7f75744c869f42fe = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_342c863661cb2fdcf0a3a7fbd8170232 = $(`<div id="html_342c863661cb2fdcf0a3a7fbd8170232" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Kashtan Patisserie<br>     <b>Street:</b> Goldschmiedgasse<br>     <b>Opening hours:</b> Mo-Su 09:00-21:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_8ce1a2efff11780f7f75744c869f42fe.setContent(html_342c863661cb2fdcf0a3a7fbd8170232);
+            
+        
+
+        marker_e65a8e9692c1ae16743eabb0e2564520.bindPopup(popup_8ce1a2efff11780f7f75744c869f42fe)
+        ;
+
+        
+    
+    
+            var marker_3a0646881d06052cbc04ddf3122702a8 = L.marker(
+                [48.2109833, 16.3770877],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_2a8dd9ec3fb2383741b9816f27b57982 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_3a0646881d06052cbc04ddf3122702a8.setIcon(icon_2a8dd9ec3fb2383741b9816f27b57982);
+        
+    
+        var popup_934c2ee2816689aa3c50807e06b6f3a8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2fe48c446b9cf2b7e7a839ea1f7b1dc2 = $(`<div id="html_2fe48c446b9cf2b7e7a839ea1f7b1dc2" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Fenstercafé<br>     <b>Street:</b> Griechengasse<br>     <b>Opening hours:</b> Mo-Su 08:00-20:00<br>     <b>Website:</b> <a href="https://www.fenster.cafe/" target="_blank">https://www.fenster.cafe/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_934c2ee2816689aa3c50807e06b6f3a8.setContent(html_2fe48c446b9cf2b7e7a839ea1f7b1dc2);
+            
+        
+
+        marker_3a0646881d06052cbc04ddf3122702a8.bindPopup(popup_934c2ee2816689aa3c50807e06b6f3a8)
+        ;
+
+        
+    
+    
+            var marker_6822d071c6cfad1021bb625d52464f8f = L.marker(
+                [48.2109812, 16.3722038],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_faacf940bb90e9576691d8cbb5dff906 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_6822d071c6cfad1021bb625d52464f8f.setIcon(icon_faacf940bb90e9576691d8cbb5dff906);
+        
+    
+        var popup_16f21cf1f05c106320b94756a5076f8c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5f20ee121db545cc763930f939859f6d = $(`<div id="html_5f20ee121db545cc763930f939859f6d" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Oysterini<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_16f21cf1f05c106320b94756a5076f8c.setContent(html_5f20ee121db545cc763930f939859f6d);
+            
+        
+
+        marker_6822d071c6cfad1021bb625d52464f8f.bindPopup(popup_16f21cf1f05c106320b94756a5076f8c)
+        ;
+
+        
+    
+    
+            var marker_d1852df4cc162e8e0db79eec2c01ee54 = L.marker(
+                [48.2110762, 16.3782572],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_0e9d68c9a5f993bea8f7adeafa40b079 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d1852df4cc162e8e0db79eec2c01ee54.setIcon(icon_0e9d68c9a5f993bea8f7adeafa40b079);
+        
+    
+        var popup_700219d6dd9fcc3e83ddab77cacad0ca = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_72300ea07e6750ba3dd44990057676bd = $(`<div id="html_72300ea07e6750ba3dd44990057676bd" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Schweden Espresso<br>     <b>Street:</b> Laurenzerberg<br>     <b>Opening hours:</b> Mo-Fr 07:00-02:00; Sa-Su 06:00-02:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_700219d6dd9fcc3e83ddab77cacad0ca.setContent(html_72300ea07e6750ba3dd44990057676bd);
+            
+        
+
+        marker_d1852df4cc162e8e0db79eec2c01ee54.bindPopup(popup_700219d6dd9fcc3e83ddab77cacad0ca)
+        ;
+
+        
+    
+    
+            var marker_a60c743e143d879cf153fb163febcba2 = L.marker(
+                [48.2106028, 16.3768273],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_25f157e48c5a4d58d646bffc79a6633a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a60c743e143d879cf153fb163febcba2.setIcon(icon_25f157e48c5a4d58d646bffc79a6633a);
+        
+    
+        var popup_826b06f084cb81b898fa29852d9da1df = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5e2775b0a1cfee9d47d7e47a30acf6ba = $(`<div id="html_5e2775b0a1cfee9d47d7e47a30acf6ba" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Coffee & Store<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_826b06f084cb81b898fa29852d9da1df.setContent(html_5e2775b0a1cfee9d47d7e47a30acf6ba);
+            
+        
+
+        marker_a60c743e143d879cf153fb163febcba2.bindPopup(popup_826b06f084cb81b898fa29852d9da1df)
+        ;
+
+        
+    
+    
+            var marker_d3d0af433cb3af647c98944fc0416f01 = L.marker(
+                [48.2045087, 16.3715937],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_5b22b3af5f66b4a08a3dd903c339d77f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d3d0af433cb3af647c98944fc0416f01.setIcon(icon_5b22b3af5f66b4a08a3dd903c339d77f);
+        
+    
+        var popup_4bcde4f0af029c85f1e6c67b54ab646a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b723c0a4fbf69a5e32b3fd4bcdea833d = $(`<div id="html_b723c0a4fbf69a5e32b3fd4bcdea833d" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Ferrari Caffe<br>     <b>Street:</b> Annagasse<br>     <b>Opening hours:</b> Mo-Sa 07:30-23:00; Su 07:30-16:00<br>     <b>Website:</b> <a href="https://www.ferrari-caffe.at/" target="_blank">https://www.ferrari-caffe.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_4bcde4f0af029c85f1e6c67b54ab646a.setContent(html_b723c0a4fbf69a5e32b3fd4bcdea833d);
+            
+        
+
+        marker_d3d0af433cb3af647c98944fc0416f01.bindPopup(popup_4bcde4f0af029c85f1e6c67b54ab646a)
+        ;
+
+        
+    
+    
+            var marker_b5a14c72e60b881b174117b52444de57 = L.marker(
+                [48.211556, 16.3761618],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_5d70a16f573549b406555c13944e5a51 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_b5a14c72e60b881b174117b52444de57.setIcon(icon_5d70a16f573549b406555c13944e5a51);
+        
+    
+        var popup_c7cca43e04436492f014e26bb9d8ea60 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2b5dab8411777f6e26c8ad50a4f8dd7d = $(`<div id="html_2b5dab8411777f6e26c8ad50a4f8dd7d" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Juice factory<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 07:00-19:00; Sa 09:00-18:30; Su 10:00-18:00<br>     <b>Website:</b> <a href="https://www.juicefactory.at/" target="_blank">https://www.juicefactory.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_c7cca43e04436492f014e26bb9d8ea60.setContent(html_2b5dab8411777f6e26c8ad50a4f8dd7d);
+            
+        
+
+        marker_b5a14c72e60b881b174117b52444de57.bindPopup(popup_c7cca43e04436492f014e26bb9d8ea60)
+        ;
+
+        
+    
+    
+            var marker_a00257aa74fe6fd485a927990ad51559 = L.marker(
+                [48.2080012, 16.3740142],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_6c625fdb3f84ceeae155c7b8eb9fc092 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a00257aa74fe6fd485a927990ad51559.setIcon(icon_6c625fdb3f84ceeae155c7b8eb9fc092);
+        
+    
+        var popup_546e65ea448da14d8048dbf7ad661377 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_abc1f313375fc42e30e8b012b9315443 = $(`<div id="html_abc1f313375fc42e30e8b012b9315443" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Haas & Haas<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Sa 08:00-20:00; Su 09:00-18:00, PH 09:00-18:00<br>     <b>Website:</b> <a href="https://www.haas-haas.at/" target="_blank">https://www.haas-haas.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_546e65ea448da14d8048dbf7ad661377.setContent(html_abc1f313375fc42e30e8b012b9315443);
+            
+        
+
+        marker_a00257aa74fe6fd485a927990ad51559.bindPopup(popup_546e65ea448da14d8048dbf7ad661377)
+        ;
+
+        
+    
+    
+            var marker_9b4750f2772c24ec354c9e2038bf35c3 = L.marker(
+                [48.2038367, 16.3701718],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_283826604201ed309737cf38cc854f1b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_9b4750f2772c24ec354c9e2038bf35c3.setIcon(icon_283826604201ed309737cf38cc854f1b);
+        
+    
+        var popup_79195fa60fce177e7fe0d1122cec4415 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_06c533942cb2573a74e64de909ac7bd8 = $(`<div id="html_06c533942cb2573a74e64de909ac7bd8" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Sacher Eck<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Su,PH 08:00-22:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_79195fa60fce177e7fe0d1122cec4415.setContent(html_06c533942cb2573a74e64de909ac7bd8);
+            
+        
+
+        marker_9b4750f2772c24ec354c9e2038bf35c3.bindPopup(popup_79195fa60fce177e7fe0d1122cec4415)
+        ;
+
+        
+    
+    
+            var marker_bcbb378862a37f829580f638619099c2 = L.marker(
+                [48.2040055, 16.369345],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_ee3fed8915ef7bfcad9b74c69852a75f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_bcbb378862a37f829580f638619099c2.setIcon(icon_ee3fed8915ef7bfcad9b74c69852a75f);
+        
+    
+        var popup_6ae2f1614c23f79b9afa9747a68b5a83 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a664fcdee198c730a85971bd15a3b2ba = $(`<div id="html_a664fcdee198c730a85971bd15a3b2ba" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Sacher Salon<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> 10:00-22:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_6ae2f1614c23f79b9afa9747a68b5a83.setContent(html_a664fcdee198c730a85971bd15a3b2ba);
+            
+        
+
+        marker_bcbb378862a37f829580f638619099c2.bindPopup(popup_6ae2f1614c23f79b9afa9747a68b5a83)
+        ;
+
+        
+    
+    
+            var marker_68df85be2238157bdf2acffcf5c9f60b = L.marker(
+                [48.2027707, 16.370904],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_f4451c77ce60bfc1381bcfac65cf391e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_68df85be2238157bdf2acffcf5c9f60b.setIcon(icon_f4451c77ce60bfc1381bcfac65cf391e);
+        
+    
+        var popup_d7e6a7bd50210acd0e9f7c0be4b4b5ae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3a5640ce9c904842b85c76bd25f02c1c = $(`<div id="html_3a5640ce9c904842b85c76bd25f02c1c" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Testa Rossa<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_d7e6a7bd50210acd0e9f7c0be4b4b5ae.setContent(html_3a5640ce9c904842b85c76bd25f02c1c);
+            
+        
+
+        marker_68df85be2238157bdf2acffcf5c9f60b.bindPopup(popup_d7e6a7bd50210acd0e9f7c0be4b4b5ae)
+        ;
+
+        
+    
+    
+            var marker_d000062d9adc0fd9e55085af81649ef4 = L.marker(
+                [48.2051153, 16.3711253],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_2f0cc1de928d138ae6ddf3e97ea54e06 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d000062d9adc0fd9e55085af81649ef4.setIcon(icon_2f0cc1de928d138ae6ddf3e97ea54e06);
+        
+    
+        var popup_a412cf11b0069baa0a7424277fda7651 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_82ddcda5082f69939edb72ba92b0c375 = $(`<div id="html_82ddcda5082f69939edb72ba92b0c375" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Vitavien<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_a412cf11b0069baa0a7424277fda7651.setContent(html_82ddcda5082f69939edb72ba92b0c375);
+            
+        
+
+        marker_d000062d9adc0fd9e55085af81649ef4.bindPopup(popup_a412cf11b0069baa0a7424277fda7651)
+        ;
+
+        
+    
+    
+            var marker_0f8e48b72bc2a13dfd009589416fd26f = L.marker(
+                [48.2094272, 16.3660886],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_03942a691d9dad55ed32fbf72a3198ea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_0f8e48b72bc2a13dfd009589416fd26f.setIcon(icon_03942a691d9dad55ed32fbf72a3198ea);
+        
+    
+        var popup_6cb3838a1d8d34dabc017c6dc1659823 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a23ff067a90253f4a57069d8d19dac7f = $(`<div id="html_a23ff067a90253f4a57069d8d19dac7f" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Unger und Klein<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 08:00-23:00; Sa 10:00-23:00; Su,PH 10:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_6cb3838a1d8d34dabc017c6dc1659823.setContent(html_a23ff067a90253f4a57069d8d19dac7f);
+            
+        
+
+        marker_0f8e48b72bc2a13dfd009589416fd26f.bindPopup(popup_6cb3838a1d8d34dabc017c6dc1659823)
+        ;
+
+        
+    
+    
+            var marker_c85164ee070c4a2bf591e22cb0ecf48e = L.marker(
+                [48.2094601, 16.3740834],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_2f643f01a9f1d013f442d256996b2630 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_c85164ee070c4a2bf591e22cb0ecf48e.setIcon(icon_2f643f01a9f1d013f442d256996b2630);
+        
+    
+        var popup_4d964c32fdb277cb2692b45c9a601417 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1491c6e6382b3c5f12b50676391f7daa = $(`<div id="html_1491c6e6382b3c5f12b50676391f7daa" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Mocarello<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Sa 10:00-18:00; PH off<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_4d964c32fdb277cb2692b45c9a601417.setContent(html_1491c6e6382b3c5f12b50676391f7daa);
+            
+        
+
+        marker_c85164ee070c4a2bf591e22cb0ecf48e.bindPopup(popup_4d964c32fdb277cb2692b45c9a601417)
+        ;
+
+        
+    
+    
+            var marker_d68de40e5558fccfe9485ef1c7c76949 = L.marker(
+                [48.2051316, 16.3601057],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_b798decce836cf73defa5a2fd1651d43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d68de40e5558fccfe9485ef1c7c76949.setIcon(icon_b798decce836cf73defa5a2fd1651d43);
+        
+    
+        var popup_b5b5c8bbb9ecae03f5788bbca23a34e6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c6f2dc6825ba75cbb6f4272cc15a82bd = $(`<div id="html_c6f2dc6825ba75cbb6f4272cc15a82bd" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> No information<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_b5b5c8bbb9ecae03f5788bbca23a34e6.setContent(html_c6f2dc6825ba75cbb6f4272cc15a82bd);
+            
+        
+
+        marker_d68de40e5558fccfe9485ef1c7c76949.bindPopup(popup_b5b5c8bbb9ecae03f5788bbca23a34e6)
+        ;
+
+        
+    
+    
+            var marker_9df0d7a93656854901fd9036a2bb728b = L.marker(
+                [48.2085467, 16.3694376],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_641641d72ce1d897197a708a5c2eaa13 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_9df0d7a93656854901fd9036a2bb728b.setIcon(icon_641641d72ce1d897197a708a5c2eaa13);
+        
+    
+        var popup_331b2a4e4feecb80bd07bd3aaca94c48 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_87d410f8a730d1a2558a1506c0df9d3d = $(`<div id="html_87d410f8a730d1a2558a1506c0df9d3d" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Starbucks<br>     <b>Street:</b> Bräunerstraße<br>     <b>Opening hours:</b> Mo-Th 07:30-21:30; Fr 07:30-21:30; Sa 08:00-21:30; Su,PH 09:00-21:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_331b2a4e4feecb80bd07bd3aaca94c48.setContent(html_87d410f8a730d1a2558a1506c0df9d3d);
+            
+        
+
+        marker_9df0d7a93656854901fd9036a2bb728b.bindPopup(popup_331b2a4e4feecb80bd07bd3aaca94c48)
+        ;
+
+        
+    
+    
+            var marker_78e819daa2156fc6641151967a9c235b = L.marker(
+                [48.2098474, 16.3699536],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_d381c8b58d7edc95380f75202e19fec3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_78e819daa2156fc6641151967a9c235b.setIcon(icon_d381c8b58d7edc95380f75202e19fec3);
+        
+    
+        var popup_382d170c50320cfa821f0557e7f1cd92 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_255bef8546c4bed4dde3f277020f395e = $(`<div id="html_255bef8546c4bed4dde3f277020f395e" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Gutruf<br>     <b>Street:</b> Milchgasse<br>     <b>Opening hours:</b> Mo-Sa 12:00-22:00<br>     <b>Website:</b> <a href="http://cafe-gutruf-wien.smarto.net" target="_blank">http://cafe-gutruf-wien.smarto.net</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_382d170c50320cfa821f0557e7f1cd92.setContent(html_255bef8546c4bed4dde3f277020f395e);
+            
+        
+
+        marker_78e819daa2156fc6641151967a9c235b.bindPopup(popup_382d170c50320cfa821f0557e7f1cd92)
+        ;
+
+        
+    
+    
+            var marker_bf54070552c021772b30f2dc329f1e4d = L.marker(
+                [48.208822, 16.3722146],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_b99380851971cb379a003cd2e945a53c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_bf54070552c021772b30f2dc329f1e4d.setIcon(icon_b99380851971cb379a003cd2e945a53c);
+        
+    
+        var popup_49abf00eebc64104a3b98e99ee0c345d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a4c6a85050326ae9ab050d7c17b5c9cf = $(`<div id="html_a4c6a85050326ae9ab050d7c17b5c9cf" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Vitavien Stephansplatz<br>     <b>Street:</b> Stephansplatz<br>     <b>Opening hours:</b> Mo-Su 09:00-22:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_49abf00eebc64104a3b98e99ee0c345d.setContent(html_a4c6a85050326ae9ab050d7c17b5c9cf);
+            
+        
+
+        marker_bf54070552c021772b30f2dc329f1e4d.bindPopup(popup_49abf00eebc64104a3b98e99ee0c345d)
+        ;
+
+        
+    
+    
+            var marker_f5337bbd076f028dd688f0865609bcbd = L.marker(
+                [48.21105, 16.36551],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_43b8cdfcbf8bf17eab3ce434c9d1de23 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_f5337bbd076f028dd688f0865609bcbd.setIcon(icon_43b8cdfcbf8bf17eab3ce434c9d1de23);
+        
+    
+        var popup_b3f97fb7e28ee54ac477a0e6a0da4509 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bbd834ac3566f5cc7ed0def1512d062a = $(`<div id="html_bbd834ac3566f5cc7ed0def1512d062a" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Caffè Couture<br>     <b>Street:</b> Herrengasse<br>     <b>Opening hours:</b> Mo-Fr 08:00-17:00; Sa 10:00-17:00<br>     <b>Website:</b> <a href="https://www.caffecouture.net" target="_blank">https://www.caffecouture.net</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_b3f97fb7e28ee54ac477a0e6a0da4509.setContent(html_bbd834ac3566f5cc7ed0def1512d062a);
+            
+        
+
+        marker_f5337bbd076f028dd688f0865609bcbd.bindPopup(popup_b3f97fb7e28ee54ac477a0e6a0da4509)
+        ;
+
+        
+    
+    
+            var marker_ed006ca0d470d2794a79765d9fb6f07c = L.marker(
+                [48.2076662, 16.367471],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_0f00c126aae1bb81327e65018cdcac00 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_ed006ca0d470d2794a79765d9fb6f07c.setIcon(icon_0f00c126aae1bb81327e65018cdcac00);
+        
+    
+        var popup_3a630af6606f587d37bda2347af8cec1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9c345e72ee5fb63f9abc688b871bd8d1 = $(`<div id="html_9c345e72ee5fb63f9abc688b871bd8d1" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> illy Caffè<br>     <b>Street:</b> Habsburgergasse<br>     <b>Opening hours:</b> Mo-Su 09:00-19:00<br>     <b>Website:</b> <a href="https://www.illy.com" target="_blank">https://www.illy.com</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_3a630af6606f587d37bda2347af8cec1.setContent(html_9c345e72ee5fb63f9abc688b871bd8d1);
+            
+        
+
+        marker_ed006ca0d470d2794a79765d9fb6f07c.bindPopup(popup_3a630af6606f587d37bda2347af8cec1)
+        ;
+
+        
+    
+    
+            var marker_178bda926962852c8ee1060a610f3abc = L.marker(
+                [48.2091154, 16.3703029],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_97eb478d51ac8d98cd756851282ec3e2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_178bda926962852c8ee1060a610f3abc.setIcon(icon_97eb478d51ac8d98cd756851282ec3e2);
+        
+    
+        var popup_6e221241bc2906cd4c12dae94f4bea33 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b18682f028519ffc92743c939010b055 = $(`<div id="html_b18682f028519ffc92743c939010b055" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Teeamo<br>     <b>Street:</b> Goldschmiedgasse<br>     <b>Opening hours:</b> Mo-Su 11:30-19:00<br>     <b>Website:</b> <a href="https://www.teeamo-vienna.at" target="_blank">https://www.teeamo-vienna.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_6e221241bc2906cd4c12dae94f4bea33.setContent(html_b18682f028519ffc92743c939010b055);
+            
+        
+
+        marker_178bda926962852c8ee1060a610f3abc.bindPopup(popup_6e221241bc2906cd4c12dae94f4bea33)
+        ;
+
+        
+    
+    
+            var marker_08c5cb70d74a3d079e34df0f06164565 = L.marker(
+                [48.2083011, 16.3661178],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_bc2bc1237bdf9b398dcc988ab5d474a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_08c5cb70d74a3d079e34df0f06164565.setIcon(icon_bc2bc1237bdf9b398dcc988ab5d474a4);
+        
+    
+        var popup_225e768e8d4d146044e813e01e4b90a1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d84030e23a33de2021825018e507af9c = $(`<div id="html_d84030e23a33de2021825018e507af9c" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Henry<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 07:40-20:00; Sa 07:40-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_225e768e8d4d146044e813e01e4b90a1.setContent(html_d84030e23a33de2021825018e507af9c);
+            
+        
+
+        marker_08c5cb70d74a3d079e34df0f06164565.bindPopup(popup_225e768e8d4d146044e813e01e4b90a1)
+        ;
+
+        
+    
+    
+            var marker_ce82577ac5a9d1580244117f699bd3e4 = L.marker(
+                [48.208526, 16.3685225],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_ad019863070c1480eaa1f5179b368ea3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_ce82577ac5a9d1580244117f699bd3e4.setIcon(icon_ad019863070c1480eaa1f5179b368ea3);
+        
+    
+        var popup_2c8abba311586f2b4c1edce0853316ed = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f79ceff38f71b4cb85c8bce5f1d565d1 = $(`<div id="html_f79ceff38f71b4cb85c8bce5f1d565d1" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Ichiban Tea<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_2c8abba311586f2b4c1edce0853316ed.setContent(html_f79ceff38f71b4cb85c8bce5f1d565d1);
+            
+        
+
+        marker_ce82577ac5a9d1580244117f699bd3e4.bindPopup(popup_2c8abba311586f2b4c1edce0853316ed)
+        ;
+
+        
+    
+    
+            var marker_b49e3e8c658ae6be0dfdb44d4f552ee8 = L.marker(
+                [48.2049705, 16.3697261],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_2531596d57a99693142d49a4330a2df6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_b49e3e8c658ae6be0dfdb44d4f552ee8.setIcon(icon_2531596d57a99693142d49a4330a2df6);
+        
+    
+        var popup_baf3a8e35100e53c5ada1ea07ce675f5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_95260950d3254d04fc30b5406f609e1b = $(`<div id="html_95260950d3254d04fc30b5406f609e1b" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Patisserie Bistro Joseph Brot<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Sa 08:00-15:00; Su 08:00-13:30<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_baf3a8e35100e53c5ada1ea07ce675f5.setContent(html_95260950d3254d04fc30b5406f609e1b);
+            
+        
+
+        marker_b49e3e8c658ae6be0dfdb44d4f552ee8.bindPopup(popup_baf3a8e35100e53c5ada1ea07ce675f5)
+        ;
+
+        
+    
+    
+            var marker_044b4af7873c693ba95bc540025514c9 = L.marker(
+                [48.2108049, 16.378113],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_08e3d85cf1afcb5643513a482643280d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_044b4af7873c693ba95bc540025514c9.setIcon(icon_08e3d85cf1afcb5643513a482643280d);
+        
+    
+        var popup_e24a4570336c0f7d1efa3052621e6d2d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a9c7537e240f4dcfb0a364abeeed4f5a = $(`<div id="html_a9c7537e240f4dcfb0a364abeeed4f5a" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Karma Food<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Fr 11:00-14:00<br>     <b>Website:</b> <a href="https://karmafood.at/" target="_blank">https://karmafood.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_e24a4570336c0f7d1efa3052621e6d2d.setContent(html_a9c7537e240f4dcfb0a364abeeed4f5a);
+            
+        
+
+        marker_044b4af7873c693ba95bc540025514c9.bindPopup(popup_e24a4570336c0f7d1efa3052621e6d2d)
+        ;
+
+        
+    
+    
+            var marker_34d7729185d1dec3775632ab02931652 = L.marker(
+                [48.2028888, 16.3701865],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_e56160b2a451e901075ecffef65d7541 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_34d7729185d1dec3775632ab02931652.setIcon(icon_e56160b2a451e901075ecffef65d7541);
+        
+    
+        var popup_ef326927f5afc29d951abd77b8c807da = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4d616c0b46a3364b9b2760ec22559bfd = $(`<div id="html_4d616c0b46a3364b9b2760ec22559bfd" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Starbucks<br>     <b>Street:</b> Kärntner Straße<br>     <b>Opening hours:</b> Mo-Th 07:00-22:00; Fr 07:00-23:00; Sa 07:30-23:00; Su 08:00-22:00<br>     <b>Website:</b> <a href="https://www.starbucks.at" target="_blank">https://www.starbucks.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_ef326927f5afc29d951abd77b8c807da.setContent(html_4d616c0b46a3364b9b2760ec22559bfd);
+            
+        
+
+        marker_34d7729185d1dec3775632ab02931652.bindPopup(popup_ef326927f5afc29d951abd77b8c807da)
+        ;
+
+        
+    
+    
+            var marker_1d3a64f58da02a01f101574fae26cf9e = L.marker(
+                [48.2038838, 16.3615999],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_1c38b9907683a89cf81bf6983ab6a7fe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_1d3a64f58da02a01f101574fae26cf9e.setIcon(icon_1c38b9907683a89cf81bf6983ab6a7fe);
+        
+    
+        var popup_06494c1a4e9807f67330a912ab5f9f19 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_83a88cff12fbf7e59f96ad0abf86c6af = $(`<div id="html_83a88cff12fbf7e59f96ad0abf86c6af" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café im Kunsthistorischen Museum<br>     <b>Street:</b> Maria-Theresien-Platz<br>     <b>Opening hours:</b> Fr-We,PH 10:00-18:00; Th 08:00-21:00<br>     <b>Website:</b> <a href="https://www.genussimmuseum.at" target="_blank">https://www.genussimmuseum.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_06494c1a4e9807f67330a912ab5f9f19.setContent(html_83a88cff12fbf7e59f96ad0abf86c6af);
+            
+        
+
+        marker_1d3a64f58da02a01f101574fae26cf9e.bindPopup(popup_06494c1a4e9807f67330a912ab5f9f19)
+        ;
+
+        
+    
+    
+            var marker_a91d737bd6b304f48367737ab937ba5d = L.marker(
+                [48.2099081, 16.3751764],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_44ffe1d2f8d0ecb3a5136719fb053850 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a91d737bd6b304f48367737ab937ba5d.setIcon(icon_44ffe1d2f8d0ecb3a5136719fb053850);
+        
+    
+        var popup_301df4b669762e70fc2fc5ade9ff2fc9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_821a06b68f35934ea1e311be14021445 = $(`<div id="html_821a06b68f35934ea1e311be14021445" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cro<br>     <b>Street:</b> Lugeck<br>     <b>Opening hours:</b> Mo-Su 09:30-20:00<br>     <b>Website:</b> <a href="https://www.thecro.at/" target="_blank">https://www.thecro.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_301df4b669762e70fc2fc5ade9ff2fc9.setContent(html_821a06b68f35934ea1e311be14021445);
+            
+        
+
+        marker_a91d737bd6b304f48367737ab937ba5d.bindPopup(popup_301df4b669762e70fc2fc5ade9ff2fc9)
+        ;
+
+        
+    
+    
+            var marker_0f79e2e10d86046c56480df859594301 = L.marker(
+                [48.2134136, 16.3622303],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_3053cfc0b440e81dc15efda6ca77baeb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_0f79e2e10d86046c56480df859594301.setIcon(icon_3053cfc0b440e81dc15efda6ca77baeb);
+        
+    
+        var popup_44603dd0ec9e596a60877c0a5728b38b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bed2c9cecb0a01a1de1c6096db2a5bfd = $(`<div id="html_bed2c9cecb0a01a1de1c6096db2a5bfd" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Enzo<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_44603dd0ec9e596a60877c0a5728b38b.setContent(html_bed2c9cecb0a01a1de1c6096db2a5bfd);
+            
+        
+
+        marker_0f79e2e10d86046c56480df859594301.bindPopup(popup_44603dd0ec9e596a60877c0a5728b38b)
+        ;
+
+        
+    
+    
+            var marker_fd1e3f8866740988034bf4eb250f140b = L.marker(
+                [48.204904, 16.3721703],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_fe99a6765e94c858e7cbbccc40068cff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_fd1e3f8866740988034bf4eb250f140b.setIcon(icon_fe99a6765e94c858e7cbbccc40068cff);
+        
+    
+        var popup_b9daf126a013b22516adc6b96a319575 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f3342ca4caf92ca4fbc733630f20a8c7 = $(`<div id="html_f3342ca4caf92ca4fbc733630f20a8c7" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Vollpension<br>     <b>Street:</b> Johannesgasse<br>     <b>Opening hours:</b> Sa,Su 08:00-18:00<br>     <b>Website:</b> <a href="https://www.vollpension.wien/" target="_blank">https://www.vollpension.wien/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_b9daf126a013b22516adc6b96a319575.setContent(html_f3342ca4caf92ca4fbc733630f20a8c7);
+            
+        
+
+        marker_fd1e3f8866740988034bf4eb250f140b.bindPopup(popup_b9daf126a013b22516adc6b96a319575)
+        ;
+
+        
+    
+    
+            var marker_49848f7e7e19cef37fa23fb4a778d2a2 = L.marker(
+                [48.2020942, 16.3691353],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_28926bbb6eb20f051de48e98c6f711d0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_49848f7e7e19cef37fa23fb4a778d2a2.setIcon(icon_28926bbb6eb20f051de48e98c6f711d0);
+        
+    
+        var popup_5f2c607d1aa62e7bfc0064e3be8f7fbe = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_27ad8e3a1d8713ff6dc59ac93cbdccbf = $(`<div id="html_27ad8e3a1d8713ff6dc59ac93cbdccbf" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> L'opera<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_5f2c607d1aa62e7bfc0064e3be8f7fbe.setContent(html_27ad8e3a1d8713ff6dc59ac93cbdccbf);
+            
+        
+
+        marker_49848f7e7e19cef37fa23fb4a778d2a2.bindPopup(popup_5f2c607d1aa62e7bfc0064e3be8f7fbe)
+        ;
+
+        
+    
+    
+            var marker_6d757f8b1e716cfac581bb537d9ec37a = L.marker(
+                [48.2036736, 16.3720363],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_d17e7e7f49204f0533f901329a805e3e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_6d757f8b1e716cfac581bb537d9ec37a.setIcon(icon_d17e7e7f49204f0533f901329a805e3e);
+        
+    
+        var popup_f4f75d5eb609763a9a12d3d19669e3c3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4e809a88dff982291f482d0028a0a7c3 = $(`<div id="html_4e809a88dff982291f482d0028a0a7c3" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Tea plus (bubble)<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Su 12:00-21:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_f4f75d5eb609763a9a12d3d19669e3c3.setContent(html_4e809a88dff982291f482d0028a0a7c3);
+            
+        
+
+        marker_6d757f8b1e716cfac581bb537d9ec37a.bindPopup(popup_f4f75d5eb609763a9a12d3d19669e3c3)
+        ;
+
+        
+    
+    
+            var marker_5b086e49297515021f570a580c35c09d = L.marker(
+                [48.2124098, 16.3707457],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_7c928c212d44c7a068e3d5589329d52c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_5b086e49297515021f570a580c35c09d.setIcon(icon_7c928c212d44c7a068e3d5589329d52c);
+        
+    
+        var popup_142fe4b6fdb290d4b97a859537a12c78 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_058b6480791bafea5dcc5979d46a7707 = $(`<div id="html_058b6480791bafea5dcc5979d46a7707" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Kaffein<br>     <b>Street:</b> Stoß im Himmel<br>     <b>Opening hours:</b> Mo-Fr 08:00-18:00; Sa-Su 10:00-18:00<br>     <b>Website:</b> <a href="https://kaffein.at/de/menu/zeitgeist" target="_blank">https://kaffein.at/de/menu/zeitgeist</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_142fe4b6fdb290d4b97a859537a12c78.setContent(html_058b6480791bafea5dcc5979d46a7707);
+            
+        
+
+        marker_5b086e49297515021f570a580c35c09d.bindPopup(popup_142fe4b6fdb290d4b97a859537a12c78)
+        ;
+
+        
+    
+    
+            var marker_f613026cd54ecfb51ba3602bd3a8d75e = L.marker(
+                [48.2149524, 16.3717358],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_121cacb58d0c890cef236385d3003bbb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_f613026cd54ecfb51ba3602bd3a8d75e.setIcon(icon_121cacb58d0c890cef236385d3003bbb);
+        
+    
+        var popup_fa6df0a7380eeb3d876a8b7e10a9de43 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_468dc0dddad9559e11d0f62830dabe9f = $(`<div id="html_468dc0dddad9559e11d0f62830dabe9f" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Rudolfs<br>     <b>Street:</b> Rudolfsplatz<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_fa6df0a7380eeb3d876a8b7e10a9de43.setContent(html_468dc0dddad9559e11d0f62830dabe9f);
+            
+        
+
+        marker_f613026cd54ecfb51ba3602bd3a8d75e.bindPopup(popup_fa6df0a7380eeb3d876a8b7e10a9de43)
+        ;
+
+        
+    
+    
+            var marker_0f1929e70ef555c7b9a99f613896de20 = L.marker(
+                [48.2137728, 16.3673295],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_1e033a0a5cc428f33fb96bddab104f67 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_0f1929e70ef555c7b9a99f613896de20.setIcon(icon_1e033a0a5cc428f33fb96bddab104f67);
+        
+    
+        var popup_c83255f6634ce609158cefe9ee9585c3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0c8da5ec9915dcc5d94db8a6bd036d4b = $(`<div id="html_0c8da5ec9915dcc5d94db8a6bd036d4b" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Caffè a Casa<br>     <b>Street:</b> Wipplingerstraße<br>     <b>Opening hours:</b> Mo-Fr 07:30-17:30; Sa 09:00-17:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_c83255f6634ce609158cefe9ee9585c3.setContent(html_0c8da5ec9915dcc5d94db8a6bd036d4b);
+            
+        
+
+        marker_0f1929e70ef555c7b9a99f613896de20.bindPopup(popup_c83255f6634ce609158cefe9ee9585c3)
+        ;
+
+        
+    
+    
+            var marker_464a3bf5e7ccac709b6daf246f1dea35 = L.marker(
+                [48.2112918, 16.3779623],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_b6e8359eada5f2e1e1109f76e8c944ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_464a3bf5e7ccac709b6daf246f1dea35.setIcon(icon_b6e8359eada5f2e1e1109f76e8c944ee);
+        
+    
+        var popup_1a4b9dbe62b01dce0839d764087ed882 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_544a4556d8c6cf2f14573dad7cf69d50 = $(`<div id="html_544a4556d8c6cf2f14573dad7cf69d50" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Vollpension<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_1a4b9dbe62b01dce0839d764087ed882.setContent(html_544a4556d8c6cf2f14573dad7cf69d50);
+            
+        
+
+        marker_464a3bf5e7ccac709b6daf246f1dea35.bindPopup(popup_1a4b9dbe62b01dce0839d764087ed882)
+        ;
+
+        
+    
+    
+            var marker_cc9bee91aa1385af3e7c8a35ed7bc115 = L.marker(
+                [48.2076305, 16.3696807],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_2c21e19289453ea1d7baddc4901f1c45 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_cc9bee91aa1385af3e7c8a35ed7bc115.setIcon(icon_2c21e19289453ea1d7baddc4901f1c45);
+        
+    
+        var popup_fe1df6ca46759025a950e193a1465511 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d25e627853f13bac0409dfb233153753 = $(`<div id="html_d25e627853f13bac0409dfb233153753" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Hawelka<br>     <b>Street:</b> Dorotheergasse<br>     <b>Opening hours:</b> Mo-Th 09:00-24:00; Fr,Sa 09:00-01:00; Su 10:00-20:00<br>     <b>Website:</b> <a href="https://hawelka.at/" target="_blank">https://hawelka.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_fe1df6ca46759025a950e193a1465511.setContent(html_d25e627853f13bac0409dfb233153753);
+            
+        
+
+        marker_cc9bee91aa1385af3e7c8a35ed7bc115.bindPopup(popup_fe1df6ca46759025a950e193a1465511)
+        ;
+
+        
+    
+    
+            var marker_96323701c85c2d3b85ae0e7d16b8568a = L.marker(
+                [48.2058461, 16.3746332],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_56377a2401033213a850f6284bdc80dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_96323701c85c2d3b85ae0e7d16b8568a.setIcon(icon_56377a2401033213a850f6284bdc80dd);
+        
+    
+        var popup_4acef8094b23e70872b1567b058bc382 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_df97e885b86721d053da17e95d274461 = $(`<div id="html_df97e885b86721d053da17e95d274461" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Francis<br>     <b>Street:</b> Weihburggasse<br>     <b>Opening hours:</b> Mo-Th 16:00-02:00; Fr, Sa 16:00-04:00; Su 16:00-00:00<br>     <b>Website:</b> <a href="https://www.cocktail-bistro-bar-francis.com/" target="_blank">https://www.cocktail-bistro-bar-francis.com/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_4acef8094b23e70872b1567b058bc382.setContent(html_df97e885b86721d053da17e95d274461);
+            
+        
+
+        marker_96323701c85c2d3b85ae0e7d16b8568a.bindPopup(popup_4acef8094b23e70872b1567b058bc382)
+        ;
+
+        
+    
+    
+            var marker_70af5866d94c6c2f4375a1f7f128ae16 = L.marker(
+                [48.2101175, 16.3808085],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_669a4214dd855187ad9234676d731946 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_70af5866d94c6c2f4375a1f7f128ae16.setIcon(icon_669a4214dd855187ad9234676d731946);
+        
+    
+        var popup_7dfd99fbee322d5c6c38c5c1c4ecad63 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7ee2235387fd7b0d4c770ed35b207e39 = $(`<div id="html_7ee2235387fd7b0d4c770ed35b207e39" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> café exchange<br>     <b>Street:</b> Georg-Coch-Platz<br>     <b>Opening hours:</b> Mo-We, Fr 10:00-18:00; Fr 10:00-20:00<br>     <b>Website:</b> <a href="https://ail.angewandte.at/cafe-exchange/" target="_blank">https://ail.angewandte.at/cafe-exchange/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_7dfd99fbee322d5c6c38c5c1c4ecad63.setContent(html_7ee2235387fd7b0d4c770ed35b207e39);
+            
+        
+
+        marker_70af5866d94c6c2f4375a1f7f128ae16.bindPopup(popup_7dfd99fbee322d5c6c38c5c1c4ecad63)
+        ;
+
+        
+    
+    
+            var marker_327245e7e06a5656df06a46511d4c03a = L.marker(
+                [48.2044966, 16.3772093],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_42095bc5f5039eff2cd0edc2d9089d78 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_327245e7e06a5656df06a46511d4c03a.setIcon(icon_42095bc5f5039eff2cd0edc2d9089d78);
+        
+    
+        var popup_0c7a2f3d29a02f519131578e3972c949 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6a30a2f514e9038a002475eed48b57bc = $(`<div id="html_6a30a2f514e9038a002475eed48b57bc" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café Elias<br>     <b>Street:</b> Parkring<br>     <b>Opening hours:</b> Mo-Fr 08:00-17:00; Sa-Su 09:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_0c7a2f3d29a02f519131578e3972c949.setContent(html_6a30a2f514e9038a002475eed48b57bc);
+            
+        
+
+        marker_327245e7e06a5656df06a46511d4c03a.bindPopup(popup_0c7a2f3d29a02f519131578e3972c949)
+        ;
+
+        
+    
+    
+            var marker_ba08b7e9e8f88b9d7abf68037a4192da = L.marker(
+                [48.2079299, 16.362537],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_89dbfd6fa74a5879385afb80835de827 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_ba08b7e9e8f88b9d7abf68037a4192da.setIcon(icon_89dbfd6fa74a5879385afb80835de827);
+        
+    
+        var popup_19d4b4954abcb3e0fc44b1deac500213 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c45a911e784e29580a2856aea3b11389 = $(`<div id="html_c45a911e784e29580a2856aea3b11389" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Café-Meierei Volksgarten<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> Mo-Su 10:00-17:00<br>     <b>Website:</b> <a href="https://www.stelldichein.at/" target="_blank">https://www.stelldichein.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_19d4b4954abcb3e0fc44b1deac500213.setContent(html_c45a911e784e29580a2856aea3b11389);
+            
+        
+
+        marker_ba08b7e9e8f88b9d7abf68037a4192da.bindPopup(popup_19d4b4954abcb3e0fc44b1deac500213)
+        ;
+
+        
+    
+    
+            var marker_1d6e5d4bed37a5a2949f9a27cb5b8ee6 = L.marker(
+                [48.2076036, 16.3670896],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_4aef950dc9a59020b622e11fa0e503d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_1d6e5d4bed37a5a2949f9a27cb5b8ee6.setIcon(icon_4aef950dc9a59020b622e11fa0e503d2);
+        
+    
+        var popup_a4f47b67ecb2e91688e70767e54e9d29 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fbddad70cdf076b5f994b5e4f0826d0a = $(`<div id="html_fbddad70cdf076b5f994b5e4f0826d0a" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> No information<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_a4f47b67ecb2e91688e70767e54e9d29.setContent(html_fbddad70cdf076b5f994b5e4f0826d0a);
+            
+        
+
+        marker_1d6e5d4bed37a5a2949f9a27cb5b8ee6.bindPopup(popup_a4f47b67ecb2e91688e70767e54e9d29)
+        ;
+
+        
+    
+    
+            var marker_76963aac42bbfe57ce1fe2bae3d540c7 = L.marker(
+                [48.2084331, 16.3705235],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_295e7782b2a8ca66365a30698e78fc2d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_76963aac42bbfe57ce1fe2bae3d540c7.setIcon(icon_295e7782b2a8ca66365a30698e78fc2d);
+        
+    
+        var popup_e15a0645d8aee116e27263dc51e4fd90 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d8f69a0ca8d8eace29d04cc3d6cb5ec8 = $(`<div id="html_d8f69a0ca8d8eace29d04cc3d6cb5ec8" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Chattanooga<br>     <b>Street:</b> Graben<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> <a href="https://www.chattanooga.at" target="_blank">https://www.chattanooga.at</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_e15a0645d8aee116e27263dc51e4fd90.setContent(html_d8f69a0ca8d8eace29d04cc3d6cb5ec8);
+            
+        
+
+        marker_76963aac42bbfe57ce1fe2bae3d540c7.bindPopup(popup_e15a0645d8aee116e27263dc51e4fd90)
+        ;
+
+        
+    
+    
+            var marker_66c8717b24858d34396bdd6d610b09ec = L.marker(
+                [48.2023905, 16.3680982],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_8903ce2147b9ac99fbfe86bbfec2398f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_66c8717b24858d34396bdd6d610b09ec.setIcon(icon_8903ce2147b9ac99fbfe86bbfec2398f);
+        
+    
+        var popup_2d434a6126a0ce36407a1d1fd5cea4c4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bba3bbc821de5dea977b2689a9a15478 = $(`<div id="html_bba3bbc821de5dea977b2689a9a15478" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> la Stella Wien<br>     <b>Street:</b> Opernring<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_2d434a6126a0ce36407a1d1fd5cea4c4.setContent(html_bba3bbc821de5dea977b2689a9a15478);
+            
+        
+
+        marker_66c8717b24858d34396bdd6d610b09ec.bindPopup(popup_2d434a6126a0ce36407a1d1fd5cea4c4)
+        ;
+
+        
+    
+    
+            var marker_b659897dbf11715087b3b08ecc78062e = L.marker(
+                [48.2048391, 16.3638155],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_8f813efde3bbc0086b0162a8c2055718 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_b659897dbf11715087b3b08ecc78062e.setIcon(icon_8f813efde3bbc0086b0162a8c2055718);
+        
+    
+        var popup_34dd80fb345f5aac0ce6008b94f32dd3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_969077da77cbddbf89856a9430512d85 = $(`<div id="html_969077da77cbddbf89856a9430512d85" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cook Café & Bistro<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> <a href="https://cook-bistro.at/" target="_blank">https://cook-bistro.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_34dd80fb345f5aac0ce6008b94f32dd3.setContent(html_969077da77cbddbf89856a9430512d85);
+            
+        
+
+        marker_b659897dbf11715087b3b08ecc78062e.bindPopup(popup_34dd80fb345f5aac0ce6008b94f32dd3)
+        ;
+
+        
+    
+    
+            var marker_e1c2ba4bc397e1959a9d65dd640bd9c6 = L.marker(
+                [48.2047888, 16.3638186],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_24b75391c3a811c7715e63ca321af600 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_e1c2ba4bc397e1959a9d65dd640bd9c6.setIcon(icon_24b75391c3a811c7715e63ca321af600);
+        
+    
+        var popup_a6bcc3e8d203a7ee65e210640dd72249 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_44960345dd79d19e2a1b96235d20d5ac = $(`<div id="html_44960345dd79d19e2a1b96235d20d5ac" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Cook Café & Bistro<br>     <b>Street:</b> No information<br>     <b>Opening hours:</b> No information<br>     <b>Website:</b> <a href="https://cook-bistro.at/" target="_blank">https://cook-bistro.at/</a><br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_a6bcc3e8d203a7ee65e210640dd72249.setContent(html_44960345dd79d19e2a1b96235d20d5ac);
+            
+        
+
+        marker_e1c2ba4bc397e1959a9d65dd640bd9c6.bindPopup(popup_a6bcc3e8d203a7ee65e210640dd72249)
+        ;
+
+        
+    
+    
+            var marker_51bd52acbdb994b057befee9a5bdbfcb = L.marker(
+                [48.2061838, 16.3689205],
+                {}
+            ).addTo(feature_group_cdee1c9616430d316cdbbeaff6ca6fe7);
+        
+    
+            var icon_d59e99fe99ede129246c094d3e3aadd1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_51bd52acbdb994b057befee9a5bdbfcb.setIcon(icon_d59e99fe99ede129246c094d3e3aadd1);
+        
+    
+        var popup_f92bc5210bca9f01fd99bb70a28faa02 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_23d3cd75499c18e460fa81ef274c21f2 = $(`<div id="html_23d3cd75499c18e460fa81ef274c21f2" style="width: 100.0%; height: 100.0%;">     <b>Name:</b> Dorotheum  Cafe<br>     <b>Street:</b> Dorotheergasee<br>     <b>Opening hours:</b> Mo-Fr 09:00-18:00; Sa 10:00-18:00<br>     <b>Website:</b> No information<br>     <b>Air conditioning:</b> No information     </div>`)[0];
+                popup_f92bc5210bca9f01fd99bb70a28faa02.setContent(html_23d3cd75499c18e460fa81ef274c21f2);
+            
+        
+
+        marker_51bd52acbdb994b057befee9a5bdbfcb.bindPopup(popup_f92bc5210bca9f01fd99bb70a28faa02)
+        ;
+
+        
+    
+    
+            feature_group_cdee1c9616430d316cdbbeaff6ca6fe7.addTo(map_a7b182bcfb86536b1d61302ebb35d160);
+        
+    
+            var layer_control_205d42604bf0959ca09ee8bdf2e507f9_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_d5f47a77ba3e33f4852723d14f5d4d42,
+                },
+                overlays :  {
+                    "With Air Conditioning" : feature_group_ced40244fccae1ecb923f697bd2ee4ce,
+                    "Without Air Conditioning" : feature_group_7be0a2b42dd394aa8b4c4fa90acfb334,
+                    "No Information" : feature_group_cdee1c9616430d316cdbbeaff6ca6fe7,
+                },
+            };
+            let layer_control_205d42604bf0959ca09ee8bdf2e507f9 = L.control.layers(
+                layer_control_205d42604bf0959ca09ee8bdf2e507f9_layers.base_layers,
+                layer_control_205d42604bf0959ca09ee8bdf2e507f9_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_a7b182bcfb86536b1d61302ebb35d160);
+
+        
+</script>
+</html>
