@@ -1,90 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AC in Cafés – Vienna 1st District</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
-      background-color: #fdfdfd;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    h1 {
-      font-size: 1.9em;
-      margin-bottom: 0.2em;
-    }
-
-    h2 {
-      font-size: 1.4em;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-    }
-
-    iframe {
-      width: 100%;
-      height: 520px;
-      border: none;
-      margin: 1em 0;
-    }
-
-    footer {
-      font-size: 0.9em;
-      color: #777;
-      text-align: center;
-      margin-top: 3em;
-      border-top: 1px solid #ddd;
-      padding-top: 1em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Café Dataset Update – Vienna 1st District</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #fdfdfd;
+        }
+        .hero {
+            background-color: #eee;
+            padding: 40px;
+            text-align: center;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: #444;
+        }
+        section {
+            padding: 40px 10%;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h2 {
+            background-color: #eee;
+            padding: 10px 20px;
+            border-left: 6px solid #333;
+            font-size: 1.8em;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin: 30px 0;
+        }
+    </style>
 </head>
 <body>
 
-<h1>Café Dataset Update – Vienna’s 1st District</h1>
+<div class="hero">
+    <h1>Café Dataset Update – Vienna 1st District</h1>
+    <p>Visualizing air conditioning availability in cafés to support heat adaptation in urban spaces</p>
+</div>
 
-<p>
-On hot summer days, many people seek out air-conditioned cafés to cool down and rest – especially older adults and vulnerable groups. However, in densely built urban areas like Vienna's 1st district, there's little reliable data showing which cafés even offer air conditioning. Although <strong>OpenStreetMap (OSM)</strong> includes an <code>air_conditioning</code> tag, it is rarely used in practice.
-</p>
+<section>
+    <h2>Motivation</h2>
+    <p>
+        Everyone knows the situation: it’s over 30°C, you’re strolling through the city and decide to take a break in a café
+        to cool down and escape the heat – only to realize it’s just as hot inside.
+    </p>
+    <p>
+        Vienna’s city center – especially the 1st district – heats up significantly in summer due to dense surfaces and a lack of greenery.
+        Many people – especially older adults and vulnerable groups – depend on cool places to rest and recover.
+        Yet currently, no reliable dataset exists showing which cafés offer air conditioning.
+    </p>
+    <p>
+        Our goal: Create an open, updated dataset that helps people identify and access cooled cafés in the city center.
+    </p>
+</section>
 
-<p>
-To address this gap, we analyzed 139 cafés in the 1st district and discovered that only <strong>6 entries contained AC information</strong>. The dataset also had significant gaps in other key attributes like opening hours, addresses, and websites.
-</p>
+<section>
+    <h2>Dataset Before</h2>
+    <p>
+        The original dataset from OpenStreetMap contained information on 139 cafés in Vienna’s 1st district.
+        However, the data was incomplete:
+    </p>
+    <ul>
+        <li>Only 6 cafés (~4%) had information about air conditioning.</li>
+        <li>26% had no opening hours listed.</li>
+        <li>32% had no street name.</li>
+        <li>53% were missing a website.</li>
+        <li>96% had no AC information.</li>
+    </ul>
+    <p>
+        This visual shows the dataset before manual cleaning and enhancement:
+    </p>
+    <iframe src="cafes_map_before.html"></iframe>
+</section>
 
-<h2>Original Dataset ("Before")</h2>
+<section>
+    <h2>Dataset After</h2>
+    <p>
+        After updating and verifying each café manually, the dataset now includes 120 valid cafés.
+        We removed duplicates and permanently closed locations, and added missing attributes through web search.
+    </p>
+    <ul>
+        <li>69 cafés with air conditioning (~58%)</li>
+        <li>43 cafés without air conditioning (~36%)</li>
+        <li>8 cafés with no information (~7%)</li>
+    </ul>
+    <p>
+        This interactive map displays the updated dataset:
+    </p>
+    <iframe src="cafes_air_conditioning_map.html"></iframe>
+</section>
 
-<p>
-The map below shows the initial state of the dataset, with most cafés lacking information on AC availability. Only 4 cafés were marked as having AC, and 2 without – while the remaining 133 had no data. This lack of information limits the usefulness of the dataset for both citizens and urban planners.
-</p>
+<section>
+    <h2>Limitations</h2>
+    <p>
+        Some limitations still apply to the dataset. Despite best efforts, a few entries could not be verified or had to be excluded:
+    </p>
+    <ul>
+        <li>19 cafés were removed due to duplication or closure</li>
+        <li>12 values across the dataset could not be updated (8x AC info, 3x website, 1x opening hours)</li>
+        <li>We successfully adjusted 287 incorrect or missing values overall</li>
+    </ul>
+</section>
 
-<iframe src="cafes_map_before.html"></iframe>
-
-<h2>Cleaning and Completion</h2>
-
-<p>
-We manually reviewed and updated the data by searching online, checking websites, and validating locations. Cafés with outdated or unclear data were excluded. As a result, we compiled a <strong>cleaned dataset of 120 cafés</strong>, with:
-<ul>
-  <li><strong>69 cafés</strong> confirmed to have air conditioning (~58%)</li>
-  <li><strong>43 cafés</strong> without AC (~36%)</li>
-  <li><strong>8 cafés</strong> still lacking clear info (~7%)</li>
-</ul>
-</p>
-
-<h2>Updated Dataset ("After")</h2>
-
-<p>
-The updated map below provides a much more reliable and complete picture. It highlights the distribution of air-conditioned cafés across the city center and offers a useful basis for climate adaptation strategies, heat mitigation planning, or simply finding a cool place to relax in summer.
-</p>
-
-<iframe src="cafes_air_conditioning_map.html"></iframe>
-
-<footer>
-  &copy; 2025 – A project based on OpenStreetMap data | Created by [Your Name]
-</footer>
+<section>
+    <h2>Use Case</h2>
+    <p>
+        This enriched dataset can support various applications:
+    </p>
+    <ul>
+        <li><strong>OpenStreetMap Contribution:</strong> Reintegration of verified data helps improve OSM quality.</li>
+        <li><strong>Public Heat Resilience:</strong> Urban planning can use the data to guide vulnerable groups to cooled spaces.</li>
+        <li><strong>Smart City Apps:</strong> Integration into WienBot or similar platforms enables real-time user guidance.</li>
+        <li><strong>Urban Analytics:</strong> The data supports spatial analysis of cooling infrastructure and social equity.</li>
+    </ul>
+</section>
 
 </body>
 </html>
+
