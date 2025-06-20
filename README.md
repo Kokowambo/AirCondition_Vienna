@@ -139,7 +139,12 @@ If you use or share this dataset, please provide appropriate attribution to both
 - `README.md` – Human-readable project overview  
 - `LICENSE` – MIT license for code  
 - `folium_visualization.ipynb` – Optional notebook for visualizing the data  
-- `folium_maps/` – Folder for map exports (optional)  
+- `folium_maps/` – Folder for map exports (optional)
+  
+## Live Demo
+
+The interactive web map and full project documentation can be accessed here:  
+https://kokowambo.github.io/AirCondition_Vienna/
 
 ## Authors
 
