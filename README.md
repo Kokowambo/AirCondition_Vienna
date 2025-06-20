@@ -48,8 +48,6 @@ For full documentation, see `metadata.txt`.
 
 ## Statistics
 
-## Statistics
-
 - Initial dataset: 139 cafés  
 - Removed (permanently closed or duplicates): 19  
 - Final dataset: 120 cafés  
@@ -57,12 +55,13 @@ For full documentation, see `metadata.txt`.
 - Without air conditioning: 43  
 - No air conditioning info available: 8  
 - Missing values that could not be resolved across all columns: 12  
-- Total values manually added: 287  
+- Total values manually edited or removed: 287  
   - `air_conditioning`: 131  
   - `opening_hours`: 35  
   - `addr:street`: 44  
   - `website`: 71  
   - `name`: 6
+
 
 
 ## FAIR Principles
