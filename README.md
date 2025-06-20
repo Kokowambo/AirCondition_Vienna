@@ -53,8 +53,19 @@ The dataset is visualized in a Jupyter Notebook using Folium with categorized ma
 
 ## License
 
-- OSM data: [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/)
-- Manually added annotations (AC etc.): CC BY 4.0
+This repository contains two distinct components with different licenses:
+
+### Code and scripts
+
+All scripts, notebooks and visualizations (e.g., Python, Jupyter, Folium) in this repository are licensed under the [MIT License](LICENSE).
+
+### Dataset
+
+The dataset is based on OpenStreetMap (OSM) data and follows the [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/).  
+Manually added attributes such as air_conditioning status are provided under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+If you use or share this dataset, please provide appropriate attribution to both OpenStreetMap and this project.
+
 
 ## Authors
 
