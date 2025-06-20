@@ -1,84 +1,136 @@
-Title: Air Conditioning in Cafés – Vienna 1st District (2025)
+# Metadata: Air Conditioning in Cafés – Vienna 1st District (2025)
 
-Description:
+## Title  
+**Air Conditioning in Cafés – Vienna 1st District (2025)**
+
+## Description  
 This dataset documents cafés in Vienna’s 1st district and includes manually collected information about the presence or absence of air conditioning. It addresses a significant data gap in OpenStreetMap and aims to support heat-resilience strategies, especially for vulnerable populations seeking cool public indoor places.
 
-Creators:
-- Konrad Schmitz
-- Luis Fink
-- Stephan Guttenbrunner
+## Creators  
+- Konrad Schmitz  
+- Luis Fink  
+- Stephan Guttenbrunner  
 (Group 9 – Masterseminar "Places Of Interest and VGI", University of Vienna)
 
-Affiliation: Department of Geography and Regional Research, University of Vienna  
+## Affiliation  
+Department of Geography and Regional Research, University of Vienna  
 Course: Masterseminar “Places Of Interest and VGI”, Summer Term 2025  
-Contact: https://github.com/Kokowambo
+Contact: [https://github.com/Kokowambo](https://github.com/Kokowambo)
 
-Version: 1.0  
-Language: English  
-Date Created: 2025-06-20  
-Last Updated: 2025-06-20  
+## Version  
+1.0
 
-Keywords:
+## Language  
+English
+
+## Date Created  
+2025-06-20
+
+## Last Updated  
+2025-06-20
+
+## Keywords  
 Vienna, cafés, air conditioning, urban climate, VGI, POI, OpenStreetMap, heat risk, public indoor spaces, FAIR data, GeoJSON
 
-Access Rights: Open Access  
-Download URL: https://github.com/Kokowambo/AirCondition_Vienna/blob/main/NEW_CafeVienna.geojson
+## Access Rights  
+Open Access
 
-License:
-- OSM base data: Open Database License (ODbL) 1.0
-- Manually added attributes: Creative Commons Attribution 4.0 (CC BY 4.0)
-- Code and visualizations: MIT License (see LICENSE file)
+## Download URL  
+[https://github.com/Kokowambo/AirCondition_Vienna/blob/main/NEW_CafeVienna.geojson](https://github.com/Kokowambo/AirCondition_Vienna/blob/main/NEW_CafeVienna.geojson)
 
-Suggested citation:
-Schmitz, K., Fink, L., Guttenbrunner, S. (2025). Air Conditioning in Cafés – Vienna 1st District (v1.0) [Data set]. University of Vienna. https://github.com/Kokowambo/AirCondition_Vienna
+## License  
+- OSM base data: [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/)  
+- Manually added attributes: [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)  
+- Code and visualizations: [MIT License](LICENSE)
 
-Dataset Filename: NEW_CafeVienna.geojson  
-Data Format: GeoJSON  
-Number of Features: 139
+## Suggested Citation  
+Schmitz, K., Fink, L., Guttenbrunner, S. (2025). *Air Conditioning in Cafés – Vienna 1st District* (v1.0) [Data set]. University of Vienna. [https://github.com/Kokowambo/AirCondition_Vienna](https://github.com/Kokowambo/AirCondition_Vienna)
 
-Spatial Coverage:
-- Location: Vienna, Austria – District 1 (Innere Stadt)
-- Bounding Box: 16.361, 48.204, 16.382, 48.215
+---
 
-Temporal Coverage:
-- Data collection period: 2025-06-01 to 2025-06-20
+## Dataset Information
 
-Attributes:
-- name: Name of the café
-- addr:street: Street name
-- opening_hours: Opening hours (OSM format)
-- website: Website URL
-- air_conditioning: Status of air conditioning (`yes`, `no`, or empty)
+- **Dataset Filename**: `NEW_CafeVienna.geojson`  
+- **Data Format**: GeoJSON  
+- **Number of Features**: 120
 
-Methodology:
-- Queried OpenStreetMap via Overpass Turbo for all cafés within Vienna’s 1st district
-- Exported data in GeoJSON format
-- Missing fields (air_conditioning, street names, opening hours, websites) were manually researched and added
-- Direct phone/email contact was used to verify AC availability
-- Removed duplicates and closed businesses
-- Visualized and analyzed via Jupyter and Folium
+### Spatial Coverage  
+- **Location**: Vienna, Austria – District 1 (Innere Stadt)  
+- **Bounding Box**: 16.361, 48.204, 16.382, 48.215
 
-Tools Used:
-- Overpass Turbo (OSM)
-- Python (Pandas, GeoPandas, Folium)
-- Jupyter Notebook
-- GitHub (collaboration and publishing)
+### Temporal Coverage  
+- **Data Collection Period**: 2025-06-01 to 2025-06-20
 
-Limitations:
-- 8 cafés could not be verified regarding AC availability
-- Some business information may become outdated (e.g., opening hours)
-- Dataset only covers one district and is not automatically updated
+---
 
-Maintenance Strategy:
-- The dataset is currently a one-time research product.
-- However, the structure and code are designed to support updates.
-- Future updates or community contributions (e.g., via GitHub pull requests) are welcome.
-- The data could be re-integrated into OpenStreetMap to improve OSM coverage on indoor cooling opportunities.
-- The dataset structure is designed to be scalable and can be extended to other districts in Vienna (e.g., district 2–23) using the same workflow.
+## Attributes
 
-Compliance:
-- This metadata and dataset follow the FAIR principles:
-  - **Findable**: Structured metadata, keywords, GitHub indexation
-  - **Accessible**: Public repository, open license
-  - **Interoperable**: Open standard (GeoJSON), clearly defined schema
-  - **Reusable**: Clear licensing, detailed documentation, extensible format
+Each feature (café) contains the following fields:
+
+- `name`: Name of the café  
+- `addr:street`: Street name  
+- `addr:housenumber`: House number  
+- `addr:city`: City  
+- `opening_hours`: Opening hours (OSM format)  
+- `website`: Website URL  
+- `air_conditioning`: Whether AC is available (`yes`, `no`, or empty)  
+- `source:ac`: Method of AC verification (`manual`, `web`, `phone`)  
+- `geometry`: WGS84 coordinates
+
+---
+
+## Methodology
+
+- Queried OpenStreetMap via Overpass Turbo for all cafés in Vienna’s 1st district  
+- Exported data in GeoJSON format  
+- All cafés were either called, researched online, or visited in person to verify air conditioning availability  
+- Missing fields (AC, opening hours, websites, street names, etc.) were manually added  
+- Removed permanently closed or duplicate entries  
+- Dataset was cleaned and validated for geometry and attribute structure  
+- Visualized and analyzed using Jupyter Notebook and Folium (Python)
+
+---
+
+## Statistics
+
+- Initial dataset: 139 cafés  
+- Removed (closed or duplicate): 19  
+- Final dataset: 120 cafés  
+- With AC: 69  
+- Without AC: 43  
+- Unknown AC status: 8  
+- Missing values unresolved: 12  
+- Total values manually edited or removed: 287  
+  - `air_conditioning`: 131  
+  - `opening_hours`: 35  
+  - `addr:street`: 44  
+  - `website`: 71  
+  - `name`: 6
+
+---
+
+## Limitations
+
+- 8 cafés could not be verified regarding AC availability  
+- Some business information (e.g. websites, opening hours) may become outdated  
+- Dataset only covers Vienna’s 1st district and is not automatically updated
+
+---
+
+## Maintenance Strategy
+
+- The dataset is a one-time student project, but designed for reusability  
+- The structure and scripts (Jupyter/Python) are reusable for future updates or expansion  
+- Community contributions are welcome via GitHub (pull requests)  
+- The dataset could be re-integrated into OpenStreetMap to enrich POI data (AC, website, hours, etc.)  
+- The structure is scalable and supports expansion to all 23 districts of Vienna using the same method
+
+---
+
+## Compliance with FAIR Principles
+
+- **Findable**: Structured metadata, keywords, public GitHub indexation  
+- **Accessible**: Public repository, open licenses  
+- **Interoperable**: Open standard (GeoJSON), OSM-style schema  
+- **Reusable**: Clear licensing (ODbL, CC BY 4.0, MIT), documentation, extensibility
+
