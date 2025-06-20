@@ -69,5 +69,10 @@ If you use or share this dataset, please provide appropriate attribution to both
 
 ## Authors
 
-Masterseminar “Places Of Interest and VGI”  
+Group 9 – Masterseminar “Places Of Interest and VGI”  
 University of Vienna, Summer Term 2025
+
+Konrad Schmitz  
+Luis Fink  
+Stephan Guttenbrunner
+
